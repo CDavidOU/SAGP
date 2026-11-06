@@ -95,7 +95,7 @@
 
         <!-- Titulos  -->
         <div class="px-4 my-4 mb-4">
-            <p class="text-uppercase text-secondary text-xxs fw-bold tracking-wider mb-1 colortext">SOLICITUDES / SOL-2026-0148</p>
+            <p class="texto-verde mb-1" style="font-size: 0.6rem; letter-spacing: 0.5px;">SOLICITUDES / SOL-2026-0148</p>
             <h2 class="fw-bold texto-gris">Detalle del peritaje</h2>
             <p class="texto-dorado">Expediente EXP-391/2026 · Juzgado Familiar de Cuernavaca</p>
             <span class="badge badge-proceso">En proceso</span>
