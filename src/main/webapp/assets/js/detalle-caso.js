@@ -15,7 +15,7 @@ const esPdf = a => a.type === "application/pdf" || a.name.toLowerCase().endsWith
 
 function elegir(archivo) {
     error.classList.add("d-none");
-    if (!archivo) { reiniciar(); return; }
+    if (!archivo) { reiniciar(); return; }            // canceló el diálogo
     if (!esPdf(archivo)) {
         reiniciar();
         error.textContent = "Solo se permiten archivos PDF.";
@@ -51,5 +51,5 @@ btnTerminar.addEventListener("click", () => {
     sessionStorage.setItem("dictamenNombre", actual.name);
     sessionStorage.setItem("dictamenTermino",
         new Date().toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "medium" }));
-    window.location.href = "dictamen-entregado.html";
+    window.location.href = "dictamen-entregado";
 });
