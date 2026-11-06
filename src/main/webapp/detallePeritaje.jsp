@@ -15,12 +15,6 @@
             font-size: 0.875rem;
         }
 
-        #fondoMain{
-            background-color: #DCDCDC;
-            color: black;
-            min-height: calc(100vh - 45px);
-        }
-
         header{
             height: 45px;
             color: black;
