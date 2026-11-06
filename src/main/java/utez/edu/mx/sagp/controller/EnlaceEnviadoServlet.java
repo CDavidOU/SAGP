@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/perito/mi-perfil")
-public class MiPerfilServlet extends HttpServlet {
+@WebServlet("/acceso/enlace-enviado")
+public class EnlaceEnviadoServlet extends HttpServlet {
 
     @Override
     protected void doGet(
@@ -17,7 +17,7 @@ public class MiPerfilServlet extends HttpServlet {
             HttpServletResponse response
     ) throws ServletException, IOException {
         request.getRequestDispatcher(
-                "/WEB-INF/vistas/perito/mi-perfil.jsp"
+                "/WEB-INF/vistas/acceso/enlace-enviado.jsp"
         ).forward(request, response);
     }
 }
