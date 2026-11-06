@@ -27,27 +27,27 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-people me-3 fs-5"></i> Peritos
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-people me-3 fs-5"></i> Solicitudes
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-card-list me-3 fs-5"></i> Carga de trabajo
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-file-earmark-text me-3 fs-5"></i> Asignación manual
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="${pageContext.request.contextPath}/tema" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-file-earmark-text me-3 fs-5"></i> Branding / Tema
                 </a>
             </li>
@@ -61,7 +61,7 @@
                 <div class="rounded-circle d-flex justify-content-center align-items-center circulo-iniciales">AM</div>
                 <span class="ms-2 text-dark" style="font-size: 0.85rem; font-weight: 500;">Ana Martínez</span>
             </div>
-            <a href="#" class="btn btn-secundario w-100 mx-3 mb-3" style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">Cerrar sesión</a>
+            <a href="${pageContext.request.contextPath}/tema" class="btn btn-secundario w-100 mx-3 mb-3" style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">Cerrar sesión</a>
         </div>
     </aside>
 
@@ -91,7 +91,7 @@
                         <div class="card-body">
                             <p class="texto mb-2">Asignaciones en proceso</p>
                             <h1 class="texto-verde fw-bold" style="font-size: 3rem;">24</h1>
-                            <small class="text-muted">Consultar peritajes activos</small>
+                            <small class="texto-muted">Consultar peritajes activos</small>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         <div class="card-body">
                             <p class="texto mb-2">Peritos registrados</p>
                             <h1 class="texto-verde fw-bold" style="font-size: 3rem;">20</h1>
-                            <small class="text-muted">18 activos º 2 inactivos</small>
+                            <small class="texto-muted">18 activos º 2 inactivos</small>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                         <div class="card-body">
                             <p class="texto mb-2">Solicitudes Pendientes</p>
                             <h1 class="texto-verde fw-bold" style="font-size: 3rem;">3</h1>
-                            <small class="text-muted">Revisar la cola de solicitudes</small>
+                            <small class="texto-muted">Revisar la cola de solicitudes</small>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
             <div class="px-4 mt-4">
                 <div class="alert alerta-verde p-3 shadow-sm">
                     <h5 class="fw-bold mb-1">3 solicitudes pendientes de atención</h5>
-                    <p class="mb-0 text-muted" style="font-size: 0.95rem;">Asigna automáticamente por menor carga y nombre A-Z, o selecciona un perito de forma manual.</p>
+                    <p class="mb-0 texto-muted" style="font-size: 0.95rem;">Asigna automáticamente por menor carga y nombre A-Z, o selecciona un perito de forma manual.</p>
                 </div>
             </div>
 

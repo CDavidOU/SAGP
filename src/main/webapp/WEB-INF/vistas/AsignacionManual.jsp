@@ -29,32 +29,32 @@
 
         <ul class="nav flex-column gap-2 mb-auto">
             <li class="nav-item ">
-                <a href="${pageContext.request.contextPath}/dashboard" class="nav-link d-flex align-items-center rounded">
+                <a href="${pageContext.request.contextPath}/dashboard" class="nav-link d-flex align-items-center rounded texto-muted">
                     <i class="bi bi-grid-fill me-3 fs-5"></i> Resumen
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-people me-3 fs-5"></i> Peritos
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-people me-3 fs-5"></i> Solicitudes
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-card-list me-3 fs-5"></i> Carga de trabajo
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted  menu-activo">
+                <a href="#" class="nav-link d-flex align-items-center texto-muted  menu-activo">
                     <i class="bi bi-file-earmark-text me-3 fs-5"></i> Asignación manual
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="${pageContext.request.contextPath}/tema" class="nav-link d-flex align-items-center texto-muted">
                     <i class="bi bi-file-earmark-text me-3 fs-5"></i> Branding / Tema
                 </a>
             </li>
@@ -92,7 +92,7 @@
         <div class="px-4 mt-4">
             <div class="alert alerta-verde p-3 shadow-sm">
                 <h5 class="fw-bold mb-1 ">Perito asignado: Roberto Salinas</h5>
-                <p class="mb-0 text-muted" style="font-size: 0.95rem;">Seleccion manual del administrador. No se aplica el orden de menor carga ni el desempate alfabetico</p>
+                <p class="mb-0 texto-muted" style="font-size: 0.95rem;">Seleccion manual del administrador. No se aplica el orden de menor carga ni el desempate alfabetico</p>
             </div>
         </div>
 
