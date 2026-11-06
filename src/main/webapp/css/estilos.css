@@ -1,0 +1,90 @@
+/* =========================================
+   PALETA DE COLORES Y TEXTOS
+========================================= */
+body { color: #5D5E5F; }
+.texto { color: #64746C !important;  }
+.fondo-crema { background-color: #FAF9F6 !important; }
+.texto-verde { color: #4A5D45 !important; }
+.texto-muted { color: #5D5E5F !important; opacity: 0.8; }
+.texto-dorado{ color: #B89758 !important; }
+
+/* =========================================
+   BOTONES (Transición a Dorado #B89758)
+========================================= */
+.btn-primario {
+    background-color: #4A5D45;
+    color: #FFFFFF;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-primario:hover {
+    background-color: #B89758;
+    color: #FFFFFF;
+}
+
+.btn-secundario {
+    background-color: #FFFFFF;
+    color: #5D5E5F;
+    border: 1px solid #5D5E5F;
+    transition: all 0.3s ease;
+}
+.btn-secundario:hover {
+    background-color: #B89758;
+    border-color: #B89758;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   COMPONENTES PERSONALIZADOS
+========================================= */
+/* Menú activo en el sidebar */
+.menu {
+    background-color: #FFFFFF;
+    color: #4A5D45;
+    font-weight: bold;
+    border-left: 4px solid #4A5D45;
+}
+
+.menu-activo {
+    background-color:#E8F3ED;
+    color: #4A5D45 !important;
+    border: 1px solid #4A5D45;
+    border-radius: 4px;
+    font-weight: bold;
+    border-left: 4px solid #4A5D45;
+}
+
+/* Círculo de las iniciales (AM) */
+.circulo-iniciales {
+    width: 35px;
+    height: 35px;
+    background-color: #FFFFFF;
+    color: #4A5D45;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid #4A5D45;
+}
+
+/* Alerta de solicitudes pendientes */
+.alerta-verde {
+    background-color: #E8F3ED;
+    color: #4A5D45;
+    border: 1px solid #4A5D45;
+    border-radius: 8px;
+}
+
+/* Pastillas de estado (Badges) */
+.badge-pendiente {
+    background-color: #FDF3E1;
+    color: #B89758;
+    border: 1px solid #B89758;
+    padding: 8px 12px;
+    font-weight: normal;
+}
+.badge-proceso {
+    background-color: #EAF3EF;
+    color: #4A5D45;
+    border: 1px solid #4A5D45;
+    padding: 8px 12px;
+    font-weight: normal;
+}
