@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: BrianGalvez
+  Date: 05/11/2026
+  Time: 11:15 p. m.
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,86 +17,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ===== Identidad gráfica SAGP ===== */
-        /*
-        @font-face {
-            font-family: "Twogether Sans";
-            src: url("fonts/TwogetherSansVar.woff2") format("woff2");
-            font-weight: 100 900;
-            font-display: swap;
-        }
-        */
-        :root {
-            --sagp-primary: #4A5D45;        /* Verde Tierra */
-            --sagp-primary-dark: #3B4A37;
-            --sagp-accent: #B89758;         /* Dorado */
-            --sagp-bg: #F1EFE7;             /* Fondo Crema */
-            --sagp-ink: #333333;            /* Gris Oscuro (confirmar: #333333 o #5D5E5F) */
-            --sagp-tint: #E4E8E1;
-            --sagp-line: #D9D5C7;
-            --sagp-muted: #6B6B66;
-            --sagp-warn: #91621B;           /* Aviso ámbar  */
-            --sagp-warn-bg: #FBF1DE;
-
-            --bs-body-bg: var(--sagp-bg);
-            --bs-body-color: var(--sagp-ink);
-            --bs-body-font-family: "Twogether Sans", "Manrope", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
-            --bs-body-font-size: .8125rem;
-            --bs-link-color-rgb: 74, 93, 69;
-        }
-        .text-secondary { color: var(--sagp-muted) !important; }
-
-        /* Menú lateral (ancho, columna y enlaces ) */
-        .sidebar { width: 238px; flex: 0 0 238px; display: flex; flex-direction: column; background: var(--sagp-bg); border-right: 1px solid var(--sagp-line); }
-        .brand { background: #fff; border-bottom: 3px solid var(--sagp-accent); }
-        .brand img { display: block; width: 190px; max-width: 100%; height: auto; }   /* logo completo, sin recorte */
-        .etiqueta-menu { font-size: .625rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--sagp-muted); }
-        .sidebar .nav { display: flex; flex-direction: column; flex-wrap: nowrap; }
-        .sidebar .nav-link { display: flex; align-items: center; gap: .75rem; padding: .75rem; border-radius: .5rem; font-size: .8125rem; color: var(--sagp-muted); text-decoration: none; }
-        .sidebar .nav-link i { font-size: 1.35rem; line-height: 1; }
-        .sidebar .nav-link:hover { background: var(--sagp-tint); color: var(--sagp-muted); }
-        .sidebar .nav-link.active { background: var(--sagp-tint); color: var(--sagp-primary); font-weight: 600; }
-        .cobertura-titulo { font-size: .75rem; color: var(--sagp-primary); margin-bottom: .75rem; }
-        .cobertura-texto { font-size: .75rem; color: var(--sagp-muted); margin-bottom: 1.25rem; }
-        .avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--sagp-tint); color: var(--sagp-primary); font-size: .75rem; font-weight: 600; }
-
-        /* Barra superior y contenido */
-        .barra-superior { min-height: 68px; padding: 0 1.5rem; display: flex; align-items: center; gap: 1rem; background: #fff; border-bottom: 1px solid var(--sagp-line); font-size: .8125rem; }
-        .contenido { padding: 2.5rem; }
-        @media (max-width: 991.98px) { .contenido { padding: 1.25rem; } }
-
-        /* Tipografía de las vistas (medidas del Figma) */
-        .crumb { font-size: .6875rem; font-weight: 600; text-transform: uppercase; color: var(--sagp-primary); margin-bottom: .5rem; }
-        .titulo-vista { font-size: 1.75rem; font-weight: 600; line-height: 1.45; margin-bottom: .5rem; }
-        .subtitulo-vista { font-size: .875rem; color: var(--sagp-muted); margin-bottom: 1.5rem; }
-        .card-titulo { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
-        .dato-label { font-size: .75rem; color: var(--sagp-muted); margin-bottom: .25rem; }
-        .texto-sagp { color: var(--sagp-primary); }
-
-        /* Componentes */
-        .card { border-color: var(--sagp-line); border-radius: .75rem; }
-        .card-body { padding: 1.5rem; }
-        .btn { border-radius: .5rem; font-size: .8125rem; font-weight: 600; padding: .6rem 1.1rem; }
-        .btn-sagp { background: var(--sagp-primary); border-color: var(--sagp-primary); color: #fff; }
-        .btn-sagp:hover, .btn-sagp:focus-visible { background: var(--sagp-primary-dark); border-color: var(--sagp-primary-dark); color: #fff; }
-        .btn-sagp:disabled { background: var(--sagp-primary); border-color: var(--sagp-primary); color: #fff; opacity: .45; }
-        .btn-outline-sagp { border-color: var(--sagp-line); background: #fff; color: var(--sagp-ink); }
-        .btn-outline-sagp:hover { background: var(--sagp-tint); }
-        .chip { background: var(--sagp-tint); color: var(--sagp-primary); font-size: .75rem; }
-        .aviso { background: var(--sagp-tint); border: 0; border-left: 4px solid var(--sagp-accent); color: var(--sagp-ink); }
-        .form-control { font-size: .8125rem; border-color: var(--sagp-line); border-radius: .5rem; padding: .6rem .75rem; }
-        .form-control:focus { border-color: var(--sagp-primary); box-shadow: 0 0 0 .2rem rgba(74, 93, 69, .25); }
-        .modal-content { border-radius: .75rem; border-color: var(--sagp-line); }
-        a:focus-visible, button:focus-visible { outline: 3px solid var(--sagp-accent); outline-offset: 2px; }
-    </style>
+    <link href="${pageContext.request.contextPath}/assets/css/mi-perfil.css" rel="stylesheet">
 </head>
 <body>
 <div class="d-flex min-vh-100">
 
     <aside class="sidebar offcanvas-lg offcanvas-start d-flex flex-column flex-shrink-0" id="menu" tabindex="-1">
-        <div class="brand p-3"><img src="img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos"></div>
+        <div class="brand p-3"><img src="${pageContext.request.contextPath}/img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos"></div>
         <p class="etiqueta-menu px-3 pt-4 mb-2">Portal del perito</p>
         <nav class="nav flex-column px-3 gap-2" aria-label="Navegación del perito">
             <a class="nav-link" href="#"><i class="bi bi-file-earmark-text"></i>Mis asignaciones</a>
@@ -99,8 +34,8 @@
             <p class="cobertura-titulo">Cobertura estatal</p>
             <p class="cobertura-texto">Todos los municipios<br>de Morelos</p>
             <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="avatar d-flex align-items-center justify-content-center">KG</span>
-                <span class="fw-semibold" style="font-size: .75rem;">Kevin Gabriel Galvez Villalva</span>
+                <span class="avatar d-flex align-items-center justify-content-center">KVR</span>
+                <span class="fw-semibold" style="font-size: .75rem;">Karla Villalva Ramirez</span>
             </div>
             <button class="btn btn-outline-sagp" type="button">Cerrar sesión</button>
         </div>
@@ -120,7 +55,7 @@
             <p class="subtitulo-vista">Actualice los datos de contacto y proteja el acceso a su cuenta.</p>
 
             <div class="card mb-4"><div class="card-body">
-                <h2 class="card-titulo mb-1">Kevin Gabriel Galvez Villalva</h2>
+                <h2 class="card-titulo mb-1">Karla Villalva Ramirez</h2>
                 <p class="text-secondary mb-3">Familiar / Psicología</p>
 
                 <div class="alert aviso py-2 d-none" id="okContacto" role="status">Datos de contacto guardados.</div>
@@ -152,7 +87,7 @@
     </div>
 </div>
 
-<!-- Ventana para cambiar la contraseña -->
+<!-- Ventana para cambiar la contraseña-->
 <div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="tituloModalPassword" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -188,6 +123,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/mi-perfil.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/mi-perfil.js"></script>
 </body>
 </html>

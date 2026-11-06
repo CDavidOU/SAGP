@@ -1,15 +1,15 @@
-/*Datos de contacto*/
+/* ===== Datos de contacto ===== */
 const form = document.getElementById("formContacto");
 const ok = document.getElementById("okContacto");
 
 form.addEventListener("submit", e => {
     e.preventDefault();
     ok.classList.add("d-none");
-    form.classList.add("was-validated");                       // marca los campos con error
+    form.classList.add("was-validated");                       // Bootstrap marca los campos con error
     if (form.checkValidity()) ok.classList.remove("d-none");
 });
 
-/* Cambiar contraseña (ventana emergente)  */
+/* ===== Cambiar contraseña (ventana emergente) ===== */
 const modalEl = document.getElementById("modalPassword");
 const formPass = document.getElementById("formPassword");
 const nueva = document.getElementById("passNueva");
