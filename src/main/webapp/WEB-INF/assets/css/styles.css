@@ -1,5 +1,5 @@
 /* =========================================
-   PALETA DE COLORES Y TEXTOS
+   PALETA DE COLORES Y ESTILOS BASE
 ========================================= */
 body {
     color: #5D5E5F;
@@ -13,7 +13,7 @@ body {
 .texto-dorado { color: #B89758 !important; }
 
 /* =========================================
-   BOTONES (Transición a Dorado #B89758)
+   BOTONES
 ========================================= */
 .btn-primario {
     background-color: #4A5D45;
@@ -29,7 +29,7 @@ body {
 .btn-secundario {
     background-color: #FFFFFF;
     color: #5D5E5F;
-    border: 1px solid #5D5E5F;
+    border: 1px solid #D5D5D5;
     transition: all 0.3s ease;
 }
 .btn-secundario:hover {
@@ -39,7 +39,7 @@ body {
 }
 
 /* =========================================
-   COMPONENTES PERSONALIZADOS
+   SIDEBAR & COMPONENTES NAVEGACIÓN
 ========================================= */
 .sidebar {
     width: 260px;
@@ -48,26 +48,18 @@ body {
     border-right: 1px solid #E5E5E5;
 }
 
-.menu {
-    background-color: #FFFFFF;
-    color: #4A5D45;
-    font-weight: bold;
-    border-left: 4px solid #4A5D45;
-}
-
 .menu-activo {
-    background-color: #E8F3ED; /* Tono suave que contrasta con el verde */
+    background-color: #E8F3ED;
     color: #4A5D45 !important;
     font-weight: bold;
     border-left: 4px solid #4A5D45;
     border-radius: 0 8px 8px 0;
 }
 
-/* Círculo de las iniciales (LH / AM) */
 .circulo-iniciales {
     width: 35px;
     height: 35px;
-    background-color: #FFFFFF;
+    background-color: #E8F3ED;
     color: #4A5D45;
     font-size: 0.8rem;
     font-weight: bold;
@@ -78,20 +70,37 @@ body {
     border-radius: 50%;
 }
 
-/* Alerta de formato no permitido u otros avisos */
-.alerta-error {
-    background-color: #FDF2F2;
-    color: #9B2C2C;
-    border: 1px solid #F8B4B4;
-    border-radius: 8px;
-}
-
 .header-top {
     font-size: 0.8rem;
 }
 
-/* Ajuste para la imagen del logo */
 .logo-morelos {
     max-height: 40px;
     width: auto;
+}
+
+/* =========================================
+   CARDS, ALERTAS Y TABLAS
+========================================= */
+.card-custom {
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+}
+
+.alerta-info {
+    background-color: #E8F3ED;
+    color: #2D4029;
+    border: 1px solid #D1E5DA;
+    border-radius: 8px;
+}
+
+.table-custom {
+    font-size: 0.85rem;
+}
+.table-custom th {
+    color: #5D5E5F;
+    font-weight: 600;
+    font-size: 0.75rem;
+    background-color: #FAFAFA;
 }
