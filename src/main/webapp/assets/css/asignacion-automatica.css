@@ -1,0 +1,47 @@
+:root {
+    --sagp-primary: #4A5D45;        /* Verde Tierra */
+    --sagp-primary-dark: #3B4A37;
+    --sagp-accent: #B89758;         /* Dorado */
+    --sagp-bg: #F1EFE7;             /* Fondo Crema */
+    --sagp-ink: #333333;            /* Gris Oscuro  */
+    --sagp-tint: #E4E8E1;
+    --sagp-tint-hover: #E9ECE4;
+    --sagp-line: #D9D5C7;
+    --sagp-muted: #6B6B66;
+
+    --bs-body-font-family: "Twogether Sans", "Manrope", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --bs-link-color-rgb: 74, 93, 69;
+}
+
+body {
+    background: var(--sagp-bg);
+    color: var(--sagp-ink);
+}
+.text-secondary { color: var(--sagp-muted) !important; }
+
+/* Menú lateral (ancho, columna y enlaces explícitos) */
+.sidebar { width: 250px; flex: 0 0 250px; display: flex; flex-direction: column; background: var(--sagp-bg); border-right: 1px solid var(--sagp-line); }
+.sidebar .nav { display: flex; flex-direction: column; flex-wrap: nowrap; }
+.sidebar .nav-link { color: var(--sagp-ink); border-radius: .5rem; padding: .6rem .9rem; text-decoration: none; }
+.sidebar .nav-link:hover { background: var(--sagp-tint); color: var(--sagp-ink); }
+.sidebar .nav-link.active { background: var(--sagp-tint); color: var(--sagp-primary); font-weight: 600; }
+.brand { background: #fff; border-bottom: 3px solid var(--sagp-accent); }
+.brand img { display: block; }
+
+/* Botones */
+.btn-sagp { background: var(--sagp-primary); border-color: var(--sagp-primary); color: #fff; }
+.btn-sagp:hover, .btn-sagp:focus-visible { background: var(--sagp-primary-dark); border-color: var(--sagp-primary-dark); color: #fff; }
+.btn-outline-sagp { border-color: var(--sagp-line); background: #fff; color: var(--sagp-ink); }
+.btn-outline-sagp:hover { background: var(--sagp-tint); }
+
+/* Contenido */
+.card { border-color: var(--sagp-line); border-radius: .75rem; }
+.crumb { color: var(--sagp-primary); font-size: .8rem; }
+.texto-sagp { color: var(--sagp-primary); }
+.chip { background: var(--sagp-tint); color: var(--sagp-primary); font-size: .8rem; }
+.winner td { background: var(--sagp-tint-hover); }
+.aviso { background: var(--sagp-tint); border: 0; border-left: 4px solid var(--sagp-accent); color: var(--sagp-ink); }
+.dato-label { font-size: .8rem; color: var(--sagp-muted); }
+.avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--sagp-tint); color: var(--sagp-primary); font-weight: 600; }
+
+a:focus-visible, button:focus-visible { outline: 3px solid var(--sagp-accent); outline-offset: 2px; }

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,42 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Asignación automática · Peritos Morelos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/sagp.css" rel="stylesheet">
-
-    <style>
-        /* Identidad gráfica
-        @font-face {
-            font-family: "Twogether Sans";
-            src: url("fonts/TwogetherSansVar.woff2") format("woff2");
-            font-weight: 100 900;
-            font-display: swap;
-        }
-        */
-        :root {
-            --sagp-primary: #4A5D45;
-            --sagp-accent: #B89758;
-            --sagp-bg: #F1EFE7;
-            --sagp-ink: #333333;
-            --bs-body-font-family: "Twogether Sans", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
-        }
-        .text-secondary { color: #6B6B66 !important; }
-        .sidebar { border-right-color: #D9D5C7; background: var(--sagp-bg); }
-        .sidebar .nav-link:hover, .sidebar .nav-link.active { background: #E4E8E1; }
-        .brand { background: #fff; }
-        .btn-sagp:hover, .btn-sagp:focus-visible { background: #3B4A37; border-color: #3B4A37; }
-        .btn-outline-sagp { border-color: #D9D5C7; }
-        .btn-outline-sagp:hover { background: #E4E8E1; }
-        .card { border-color: #D9D5C7; }
-        .chip, .aviso, .avatar { background: #E4E8E1; }
-        .winner td { background: #E9ECE4; }
-        .dato-label { color: #6B6B66; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/asignacion-automatica.css" rel="stylesheet">
 </head>
 <body>
 <div class="d-flex min-vh-100">
 
     <aside class="sidebar offcanvas-lg offcanvas-start d-flex flex-column flex-shrink-0" id="menu" tabindex="-1">
-        <div class="brand p-3"><img src="img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos" class="img-fluid"></div>
+        <div class="brand p-3"><img src="${pageContext.request.contextPath}/img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos" class="img-fluid"></div>
         <nav class="nav flex-column p-3 gap-1" aria-label="Navegación del coordinador">
             <a class="nav-link" href="#">Resumen</a>
             <a class="nav-link active" href="#" aria-current="page">Solicitudes</a>
@@ -51,8 +26,8 @@
         </nav>
         <div class="mt-auto p-3 border-top">
             <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="avatar d-flex align-items-center justify-content-center">AM</span>
-                <span class="small">Ana Martínez<br><span class="text-secondary">Coordinadora de peritos</span></span>
+                <span class="avatar d-flex align-items-center justify-content-center">JA</span>
+                <span class="small">Johana Alvarez<br><span class="text-secondary">Coordinadora de peritos</span></span>
             </div>
             <button class="btn btn-outline-sagp w-100" type="button">Cerrar sesión</button>
         </div>
@@ -131,6 +106,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/asignacion-automatica.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/asignacion-automatica.js"></script>
 </body>
 </html>
