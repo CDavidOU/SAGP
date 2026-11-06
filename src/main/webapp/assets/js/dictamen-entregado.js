@@ -8,10 +8,10 @@ const avisoVer = document.getElementById("avisoVer");
 
 btnVer.addEventListener("click", () => {
     avisoVer.classList.add("d-none");
-    const dataUrl = sessionStorage.getItem("dictamenPdf");
+    const dataUrl = sessionStorage.getItem("dictamenPdf");   // lo guardará la pantalla anterior
 
     if (!dataUrl) {
-        avisoVer.textContent = "Vista previa no disponible por el momento";
+        avisoVer.textContent = "Vista previa no disponible en esta maqueta: el PDF se abrirá desde el servidor cuando se conecten las pantallas.";
         avisoVer.classList.remove("d-none");
         return;
     }
