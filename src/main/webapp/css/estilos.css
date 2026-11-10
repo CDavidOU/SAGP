@@ -1,0 +1,118 @@
+/* =========================================
+   COLORES PRIMARIO Y SECUNDARIO
+========================================= */
+:root {
+    --primario: #4A5D45;
+    --secundario: #B89758;
+    --fondo-primario: #FFFFFF;
+    --fondo-secundario: #FAF9F6;
+    --texto: #64746C;
+    --titulo: #4A5D45;
+    --muted: #5D5E5F;
+}
+
+/* =========================================
+   PALETA DE COLORES Y TEXTOS
+========================================= */
+body { color: var(--muted); }
+.texto { color: var(--texto) !important;  }
+.fondo-crema { background-color: var(--fondo-secundario) !important; }
+.texto-verde { color: var(--primario) !important; }
+.texto-muted { color: var(--muted) !important; opacity: 0.8; }
+.texto-dorado{ color: var(--secundario) !important; }
+
+/* =========================================
+   BOTONES (Transición a Dorado)
+========================================= */
+.btn-primario {
+    background-color: var(--primario);
+    color: var(--fondo-primario);
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-primario-solido {
+    background-color: var(--primario);
+    color: var(--fondo-primario);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+    background-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+
+.btn-secundario-solido {
+    background-color: var(--secundario);
+    border-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+.btn-secundario {
+    background-color: var(--fondo-primario);
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    transition: all 0.3s ease;
+}
+.btn-secundario:hover {
+    background-color: var(--secundario);
+    border-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+
+/* =========================================
+   COMPONENTES PERSONALIZADOS
+========================================= */
+/* Menú activo en el sidebar */
+.menu {
+    background-color: var(--fondo-primario);
+    color: var(--primario) !important;
+    font-weight: bold;
+    border-left: 4px solid var(--primario);
+}
+
+.menu-activo {
+    background-color: #E8F3ED;
+    color: var(--primario) !important;
+    border: 1px solid var(--primario);
+    border-radius: 4px;
+    font-weight: bold;
+    border-left: 4px solid var(--primario);
+}
+
+/* Círculo de las iniciales (AM) */
+.circulo-iniciales {
+    width: 35px;
+    height: 35px;
+    background-color: var(--fondo-primario);
+    color: var(--primario);
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--primario);
+}
+
+/* Alerta de solicitudes pendientes */
+.alerta-verde {
+    background-color: #E8F3ED;
+    color: var(--primario);
+    border: 1px solid var(--primario);
+    border-radius: 8px;
+}
+
+/* Pastillas de estado (Badges) */
+.badge-pendiente {
+    background-color: #FDF3E1;
+    color: var(--secundario);
+    border: 1px solid var(--secundario);
+    padding: 8px 12px;
+    font-weight: normal;
+}
+.badge-proceso {
+    background-color: #EAF3EF;
+    color: var(--primario);
+    border: 1px solid var(--primario);
+    padding: 8px 12px;
+    font-weight: normal;
+}
