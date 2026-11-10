@@ -7,6 +7,21 @@ body { color: #5D5E5F; }
 .texto-verde { color: #4A5D45 !important; }
 .texto-muted { color: #5D5E5F !important; opacity: 0.8; }
 .texto-dorado{ color: #B89758 !important; }
+.texto-crema{ color: #FAF9F6 !important; }
+
+/* =========================================
+   ENLACES DEL MENÚ LATERAL (Fondo Verde)
+========================================= */
+.enlace-menu {
+    color: #FAF9F6 !important; /* Color Crema */
+    opacity: 0.75;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.enlace-menu:hover {
+    color: #B89758 !important; /* Cambia a Dorado */
+    opacity: 1;
+}
 
 /* =========================================
    BOTONES (Transición a Dorado #B89758)

@@ -34,27 +34,27 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-crema">
                     <i class="bi bi-people me-3 fs-5"></i> Peritos
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-crema">
                     <i class="bi bi-people me-3 fs-5"></i> Solicitudes
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-crema">
                     <i class="bi bi-card-list me-3 fs-5"></i> Carga de trabajo
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted  menu-activo">
+                <a href="#" class="nav-link d-flex align-items-center texto-crema  menu-activo">
                     <i class="bi bi-file-earmark-text me-3 fs-5"></i> Asignación manual
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
+                <a href="#" class="nav-link d-flex align-items-center texto-crema">
                     <i class="bi bi-file-earmark-text me-3 fs-5"></i> Branding / Tema
                 </a>
             </li>

@@ -12,63 +12,14 @@
 
 <div class="container-fluid p-0 d-flex">
     <!-- Izquierdo -->
-    <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
-
-        <div class="m-2 text-center">
-            <img src="${pageContext.request.contextPath}/img/logo.png" alt="Gobierno de Morelos" style="max-width: 100%; height: auto;">
-        </div>
-
-        <p class="text-muted fw-bold px-3 mb-3" style="font-size: 0.75rem; letter-spacing: 0.5px;">ADMINISTRACIÓN</p>
-
-        <ul class="nav flex-column gap-2 mb-auto">
-            <li class="nav-item ">
-                <a href="#" class="nav-link d-flex align-items-center rounded menu-activo">
-                    <i class="bi bi-grid-fill me-3 fs-5"></i> Resumen
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
-                    <i class="bi bi-people me-3 fs-5"></i> Peritos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
-                    <i class="bi bi-people me-3 fs-5"></i> Solicitudes
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
-                    <i class="bi bi-card-list me-3 fs-5"></i> Carga de trabajo
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
-                    <i class="bi bi-file-earmark-text me-3 fs-5"></i> Asignación manual
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center text-muted">
-                    <i class="bi bi-file-earmark-text me-3 fs-5"></i> Branding / Tema
-                </a>
-            </li>
-        </ul>
-
-        <div class="mt-auto pt-3">
-            <p class="texto-verde mx-3 mb-1" style="font-size: 0.85rem;">Cobertura estatal</p>
-            <p class="text-muted mx-3 mb-4" style="font-size: 0.75rem; line-height: 1.2;">Todos los municipios<br>de Morelos</p>
-
-            <div class="d-flex align-items-center m-3">
-                <div class="rounded-circle d-flex justify-content-center align-items-center circulo-iniciales">AM</div>
-                <span class="ms-2 text-dark" style="font-size: 0.85rem; font-weight: 500;">Ana Martínez</span>
-            </div>
-            <a href="#" class="btn btn-secundario w-100 mx-3 mb-3" style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">Cerrar sesión</a>
-        </div>
-    </aside>
+    <jsp:include page="sidebar.jsp">
+        <jsp:param name="seccionActiva" value="resumen" />
+    </jsp:include>
 
     <!-- Derecha -->
-    <main class="bg-white" style="flex: 1;">
+    <main class="fondo-crema" style="flex: 1;">
 
-        <div class="p-3 fondo-crema row" >
+        <div class="p-3 bg-white row" >
             <div class=" col-8">
                 <p class="texto-gris mb-0">Gestion y asignación de peritos judiciales</p>
             </div>
@@ -87,7 +38,7 @@
         <div class="px-4 mb-4">
             <div class="row g-3">
                 <div class="col-md-3">
-                    <div class="card shadow-sm border-0 rounded-3 h-100 fondo-crema">
+                    <div class="card shadow border-0 rounded-3 h-100 bg-white">
                         <div class="card-body">
                             <p class="texto mb-2">Asignaciones en proceso</p>
                             <h1 class="texto-verde fw-bold" style="font-size: 3rem;">24</h1>
@@ -96,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow-sm border-0 rounded-3 h-100 fondo-crema">
+                    <div class="card shadow border-0 rounded-3 h-100 bg-white">
                         <div class="card-body">
                             <p class="texto mb-2">Peritos registrados</p>
                             <h1 class="texto-verde fw-bold" style="font-size: 3rem;">20</h1>
@@ -105,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card shadow-sm border-0 rounded-3 h-100 fondo-crema">
+                    <div class="card shadow border-0 rounded-3 h-100 bg-white">
                         <div class="card-body">
                             <p class="texto mb-2">Solicitudes Pendientes</p>
                             <h1 class="texto-verde fw-bold" style="font-size: 3rem;">3</h1>
@@ -114,14 +65,14 @@
                     </div>
                 </div>
 
-            <div class="px-4 mt-4">
-                <div class="alert alerta-verde p-3 shadow-sm">
+            <div class="px-3 mt-4">
+                <div class="alert alerta-verde p-3 shadow">
                     <h5 class="fw-bold mb-1">3 solicitudes pendientes de atención</h5>
                     <p class="mb-0 text-muted" style="font-size: 0.95rem;">Asigna automáticamente por menor carga y nombre A-Z, o selecciona un perito de forma manual.</p>
                 </div>
             </div>
 
-            <div class="px-4 mt-4">
+            <div class="px-3 mt-4">
                 <div class="border rounded bg-white overflow-hidden shadow-sm">
                     <table class="table mb-0 align-middle">
                         <thead class="table-light">
