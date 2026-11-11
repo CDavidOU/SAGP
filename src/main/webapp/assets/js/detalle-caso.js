@@ -45,11 +45,11 @@ zona.addEventListener("drop", e => {
     }
 });
 
-// Simulación: guarda los datos para la pantalla siguiente (luego los reemplazará el servidor)
+// guarda los datos como simulacion
 btnTerminar.addEventListener("click", () => {
     if (!actual) return;
     sessionStorage.setItem("dictamenNombre", actual.name);
     sessionStorage.setItem("dictamenTermino",
         new Date().toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "medium" }));
-    window.location.href = "dictamen-entregado";
+    window.location.href = "dictamen-entregado";   // mismo rol (/perito/): resuelve a /perito/dictamen-entregado
 });
