@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,141 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gestión de peritos | SAGP</title>
 
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet">
-
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-            rel="stylesheet">
-
-    <link
-            href="${pageContext.request.contextPath}/assets/css/estilos.css"
-            rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/assets/css/estilos.css">
 </head>
 
-<body class="fondo-crema">
-<div class="d-flex min-vh-100">
+<body class="bg-light" style="overflow-x: hidden;">
+<div class="container-fluid p-0 d-flex">
+
     <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
         <jsp:param name="seccionActiva" value="peritos"/>
     </jsp:include>
 
-    <div class="flex-grow-1 min-vh-100">
-        <header class="bg-white border-bottom d-flex align-items-center
-                           justify-content-between px-4 px-lg-5 py-3">
-                <span class="texto">
-                    Gestión y asignación de peritos judiciales
-                </span>
-
-            <span class="texto-verde fw-semibold text-nowrap">
-                    Administrador&nbsp; / &nbsp;Morelos
-                </span>
-        </header>
-
-        <main class="container-fluid px-4 px-lg-5 py-4">
-            <div class="texto-verde fw-semibold small mb-4">
-                ADMINISTRADOR / MORELOS
+    <main class="bg-white" style="flex: 1;">
+        <div class="p-3 fondo-crema row">
+            <div class="col-8">
+                <p class="texto mb-0">Gestión y asignación de peritos judiciales</p>
             </div>
+            <div class="col-4">
+                <p class="texto-verde fw-bold mb-1">Administrador/Morelos</p>
+            </div>
+        </div>
 
-            <h1 class="texto-verde fw-semibold mb-2">
-                Gestión de peritos
-            </h1>
-
-            <p class="texto mb-4">
+        <div class="px-4 my-4">
+            <div class="texto-verde fw-semibold mb-3">ADMINISTRADOR / MORELOS</div>
+            <h1 class="fw-bold texto mb-2">Gestión de peritos</h1>
+            <p class="texto-muted">
                 Consulta, registra y actualiza los perfiles del directorio estatal.
             </p>
+        </div>
 
-            <section aria-label="Directorio de peritos">
-                <div class="row align-items-end g-3 mb-4">
-                    <div class="col-12 col-lg-8">
-                        <label for="buscar-perito" class="form-label texto-verde">
-                            Buscar perito
-                        </label>
-
+        <div class="px-4 mt-4">
+            <div class="card border-0 rounded-3 shadow-sm p-4 fondo-crema">
+                <div class="d-flex justify-content-between align-items-end gap-3 flex-wrap mb-4">
+                    <div>
+                        <label class="form-label" for="buscar-perito">Buscar perito</label>
                         <input
+                                class="form-control"
                                 id="buscar-perito"
                                 name="buscar"
                                 type="search"
-                                class="form-control"
                                 placeholder="Ej. Juan Carlos Pérez">
                     </div>
 
-                    <div class="col-12 col-lg-4">
-                        <button class="btn btn-primario w-100 w-lg-auto" type="button">
-                            Agregar Nuevo Perito
-                        </button>
-                    </div>
+                    <button class="btn btn-primario" type="button">
+                        <i class="bi bi-person-plus me-2" aria-hidden="true"></i>
+                        Agregar nuevo perito
+                    </button>
                 </div>
 
-                <div class="bg-white border rounded-3 overflow-hidden">
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0">
-                            <thead class="fondo-crema">
-                            <tr>
-                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
-                                    ID
-                                </th>
-                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
-                                    NOMBRE COMPLETO
-                                </th>
-                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
-                                    MATERIA / ESPECIALIDAD PRINCIPAL
-                                </th>
-                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
-                                    ESTADO
-                                </th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            <tr>
-                                <td class="texto px-3 py-3">PER-001</td>
-                                <td class="texto px-3 py-3">Lucía Hernández López</td>
-                                <td class="texto px-3 py-3">Familiar / Psicología</td>
-                                <td class="px-3 py-3">
-                                    <span class="badge-proceso rounded">Activo</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="texto px-3 py-3">PER-002</td>
-                                <td class="texto px-3 py-3">Carlos Méndez Ruiz</td>
-                                <td class="texto px-3 py-3">Civil / Grafoscopía</td>
-                                <td class="px-3 py-3">
-                                    <span class="badge-proceso rounded">Activo</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="texto px-3 py-3">PER-003</td>
-                                <td class="texto px-3 py-3">María Torres García</td>
-                                <td class="texto px-3 py-3">Familiar / Psicología</td>
-                                <td class="px-3 py-3">
-                                    <span class="badge-proceso rounded">Activo</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="texto px-3 py-3">PER-004</td>
-                                <td class="texto px-3 py-3">Adriana López Morales</td>
-                                <td class="texto px-3 py-3">Civil / Valuación</td>
-                                <td class="px-3 py-3">
-                                            <span class="badge bg-light texto-muted rounded">
-                                                Inactivo
-                                            </span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-2">
+                        <thead class="table-light">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NOMBRE COMPLETO</th>
+                            <th scope="col">MATERIA / ESPECIALIDAD PRINCIPAL</th>
+                            <th scope="col">ESTADO</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>PER-001</td>
+                            <td>Lucía Hernández López</td>
+                            <td>Familiar / Psicología</td>
+                            <td>
+                                <span class="badge badge-proceso rounded-pill">Activo</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PER-002</td>
+                            <td>Carlos Méndez Ruiz</td>
+                            <td>Civil / Grafoscopía</td>
+                            <td>
+                                <span class="badge badge-proceso rounded-pill">Activo</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PER-003</td>
+                            <td>María Torres García</td>
+                            <td>Familiar / Psicología</td>
+                            <td>
+                                <span class="badge badge-proceso rounded-pill">Activo</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PER-004</td>
+                            <td>Adriana López Morales</td>
+                            <td>Civil / Valuación</td>
+                            <td>
+                                <span class="badge badge-pendiente rounded-pill">Inactivo</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <p class="texto mt-3 mb-0">
+                <p class="texto-muted small mb-0">
                     Selecciona un perito para consultar sus datos y casos históricos.
                 </p>
-            </section>
-        </main>
-    </div>
+            </div>
+        </div>
+    </main>
 </div>
 </body>
 </html>
