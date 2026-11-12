@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Registrar perito | SAGP</title>
 
     <link
@@ -15,205 +16,171 @@
             rel="stylesheet">
 
     <link
-            href="${pageContext.request.contextPath}/assets/css/registrar-perito.css"
+            href="${pageContext.request.contextPath}/assets/css/estilos.css"
             rel="stylesheet">
 </head>
 
-<body>
-<header class="topbar">
-    <div class="brand">
-        <img
-                class="brand-logo"
-                src="${pageContext.request.contextPath}/assets/img/morelos-logo-horizontal.jpg"
-                alt="Gobierno del Estado de Morelos">
+<body class="fondo-crema">
+<div class="d-flex min-vh-100">
 
-        <span class="brand-divider" aria-hidden="true"></span>
+    <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
+        <jsp:param name="seccionActiva" value="peritos"/>
+    </jsp:include>
 
-        <span class="brand-system-name">
+    <div class="flex-grow-1 min-vh-100">
+
+        <header class="bg-white border-bottom px-4 py-3 d-flex
+                       justify-content-between align-items-center">
+            <span class="texto">
                 Gestión y asignación de peritos judiciales
             </span>
-    </div>
 
-    <div class="user-label">MORELOS&nbsp; / &nbsp;Administrador</div>
-</header>
+            <span class="texto-verde fw-semibold text-nowrap">
+                Administrador&nbsp; / &nbsp;Morelos
+            </span>
+        </header>
 
-<div class="layout">
-    <aside class="sidebar">
-        <p class="sidebar-title">ADMINISTRACIÓN</p>
+        <main class="container-fluid px-4 px-lg-5 py-4 py-lg-5">
 
-        <nav class="sidebar-nav" aria-label="Navegación de administración">
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-grid" aria-hidden="true"></i>
-                <span>Resumen</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent" aria-hidden="true"></i>
-                <span>Solicitudes</span>
-            </a>
-
-            <a class="nav-link-item active" href="#">
-                <i class="bi bi-people nav-icon-accent" aria-hidden="true"></i>
-                <span>Peritos</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-bar-chart" aria-hidden="true"></i>
-                <span>Carga de trabajo</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent" aria-hidden="true"></i>
-                <span>Asignación manual</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent" aria-hidden="true"></i>
-                <span>Branding / Tema</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <div class="coverage-title">Cobertura estatal</div>
-
-            <p class="coverage-description">
-                Todos los municipios<br>
-                de Morelos
-            </p>
-
-            <div class="profile">
-                <div class="profile-initials" aria-hidden="true">AM</div>
-
-                <div>
-                    <div class="profile-name">Ana Martínez</div>
-                    <div class="profile-role">Administradora</div>
-                </div>
+            <div class="texto-verde small fw-semibold mb-3">
+                PERITOS / NUEVO REGISTRO
             </div>
 
-            <a class="logout-link" href="#">
-                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
-                <span>Cerrar sesión</span>
-            </a>
-        </div>
-    </aside>
+            <h1 class="texto-verde mb-2">Registrar perito</h1>
 
-    <main class="content">
-        <div class="eyebrow">PERITOS / NUEVO REGISTRO</div>
+            <p class="texto mb-4">
+                Los campos marcados con * son obligatorios.
+            </p>
 
-        <h1>Registrar perito</h1>
+            <form>
+                <section class="bg-white border rounded-4 p-4 p-lg-5 mb-4">
+                    <h2 class="h4 texto-verde mb-4">
+                        Información del perito
+                    </h2>
 
-        <p class="page-description">
-            Los campos marcados con * son obligatorios.
-        </p>
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="nombre">
+                                Nombre completo *
+                            </label>
+                            <input
+                                    class="form-control"
+                                    id="nombre"
+                                    name="nombre"
+                                    type="text"
+                                    placeholder="Nombre y apellidos"
+                                    required>
+                        </div>
 
-        <form class="register-form">
-            <section class="panel">
-                <h2>Información del perito</h2>
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="correo">
+                                Correo electrónico *
+                            </label>
+                            <input
+                                    class="form-control"
+                                    id="correo"
+                                    name="correo"
+                                    type="email"
+                                    placeholder="nombre@ejemplo.mx"
+                                    required>
+                        </div>
 
-                <div class="form-grid">
-                    <div>
-                        <label class="form-label" for="nombre">
-                            Nombre completo *
-                        </label>
-                        <input
-                                class="form-control"
-                                id="nombre"
-                                name="nombre"
-                                type="text"
-                                placeholder="Nombre y apellidos"
-                                required>
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="telefono">
+                                Teléfono
+                            </label>
+                            <input
+                                    class="form-control"
+                                    id="telefono"
+                                    name="telefono"
+                                    type="tel"
+                                    placeholder="777 000 0000">
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="estado">
+                                Estado
+                            </label>
+                            <select class="form-select" id="estado" name="estado">
+                                <option selected>Activo</option>
+                                <option>Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white border rounded-4 p-4 p-lg-5 mb-4">
+                    <h2 class="h4 texto-verde mb-3">
+                        Materias y especialidades
+                    </h2>
+
+                    <p class="texto mb-4">
+                        Agrega cada combinación que el perito puede atender.
+                    </p>
+
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="materia">
+                                Materia *
+                            </label>
+                            <select class="form-select" id="materia" name="materia">
+                                <option selected>Familiar</option>
+                                <option>Civil</option>
+                                <option>Penal</option>
+                                <option>Laboral</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="especialidad">
+                                Especialidad *
+                            </label>
+                            <select
+                                    class="form-select"
+                                    id="especialidad"
+                                    name="especialidad">
+                                <option selected>Psicología</option>
+                                <option>Grafoscopía</option>
+                                <option>Valuación</option>
+                                <option>Criminalística</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div>
-                        <label class="form-label" for="correo">
-                            Correo electrónico *
-                        </label>
-                        <input
-                                class="form-control"
-                                id="correo"
-                                name="correo"
-                                type="email"
-                                placeholder="nombre@ejemplo.mx"
-                                required>
+                    <div class="mt-4" aria-label="Combinaciones agregadas">
+                        <span class="alerta-verde d-inline-block px-3 py-2 me-2 mb-2">
+                            Familiar / Psicología
+                        </span>
+                        <span class="alerta-verde d-inline-block px-3 py-2 me-2 mb-2">
+                            Civil / Psicología
+                        </span>
                     </div>
 
-                    <div>
-                        <label class="form-label" for="telefono">Teléfono</label>
-                        <input
-                                class="form-control"
-                                id="telefono"
-                                name="telefono"
-                                type="tel"
-                                placeholder="777 000 0000">
-                    </div>
+                    <button class="btn btn-secundario mt-2" type="button">
+                        <i class="bi bi-plus-lg me-2" aria-hidden="true"></i>
+                        Agregar combinación
+                    </button>
+                </section>
 
-                    <div>
-                        <label class="form-label" for="estado">Estado</label>
-                        <select class="form-select" id="estado" name="estado">
-                            <option selected>Activo</option>
-                            <option>Inactivo</option>
-                        </select>
-                    </div>
+                <div class="d-flex flex-wrap gap-3">
+                    <button class="btn btn-primario px-4 py-2" type="button">
+                        Guardar perito
+                    </button>
+
+                    <a
+                            class="btn btn-secundario px-4 py-2"
+                            href="${pageContext.request.contextPath}/admin/peritos">
+                        Cancelar
+                    </a>
                 </div>
-            </section>
 
-            <section class="panel">
-                <h2>Materias y especialidades</h2>
-
-                <p class="panel-intro">
-                    Agrega cada combinación que el perito puede atender.
+                <p class="texto mt-4 mb-0">
+                    Cobertura automática: todos los municipios de Morelos.
                 </p>
+            </form>
 
-                <div class="form-grid">
-                    <div>
-                        <label class="form-label" for="materia">Materia *</label>
-                        <select class="form-select" id="materia" name="materia">
-                            <option selected>Familiar</option>
-                            <option>Civil</option>
-                            <option>Penal</option>
-                            <option>Laboral</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="especialidad">
-                            Especialidad *
-                        </label>
-                        <select class="form-select" id="especialidad" name="especialidad">
-                            <option selected>Psicología</option>
-                            <option>Grafoscopía</option>
-                            <option>Valuación</option>
-                            <option>Criminalística</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="combination-list" aria-label="Combinaciones agregadas">
-                    <span class="combination-chip">Familiar / Psicología</span>
-                    <span class="combination-chip">Civil / Psicología</span>
-                </div>
-
-                <button class="btn-add-combination" type="button">
-                    <i class="bi bi-plus-lg" aria-hidden="true"></i>
-                    Agregar combinación
-                </button>
-            </section>
-
-            <div class="form-actions">
-                <button class="btn-sagp" type="button">Guardar perito</button>
-
-                <a
-                        class="btn-cancel"
-                        href="${pageContext.request.contextPath}/admin/peritos">
-                    Cancelar
-                </a>
-            </div>
-
-            <p class="coverage-note">
-                Cobertura automática: todos los municipios de Morelos.
-            </p>
-        </form>
-    </main>
+        </main>
+    </div>
 </div>
 </body>
 </html>
