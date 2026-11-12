@@ -7,7 +7,7 @@
     <title>Gestión de peritos | SAGP</title>
 
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet"
@@ -21,29 +21,39 @@
         <jsp:param name="seccionActiva" value="peritos"/>
     </jsp:include>
 
-    <main class="bg-white" style="flex: 1;">
-        <div class="p-3 fondo-crema row">
+    <main class="fondo-crema" style="flex: 1;">
+        <div class="p-3 bg-white row">
             <div class="col-8">
-                <p class="texto mb-0">Gestión y asignación de peritos judiciales</p>
+                <p class="texto mb-0">
+                    Gestión y asignación de peritos judiciales
+                </p>
             </div>
             <div class="col-4">
-                <p class="texto-verde fw-bold mb-1">Administrador/Morelos</p>
+                <p class="texto-verde fw-bold mb-1">
+                    Administrador/Morelos
+                </p>
             </div>
         </div>
 
         <div class="px-4 my-4">
-            <div class="texto-verde fw-semibold mb-3">ADMINISTRADOR / MORELOS</div>
+            <div class="texto-verde fw-semibold mb-3">
+                ADMINISTRADOR / MORELOS
+            </div>
+
             <h1 class="fw-bold texto mb-2">Gestión de peritos</h1>
-            <p class="texto-muted">
+
+            <p class="texto-muted mb-0">
                 Consulta, registra y actualiza los perfiles del directorio estatal.
             </p>
         </div>
 
         <div class="px-4 mt-4">
-            <div class="card border-0 rounded-3 shadow-sm p-4 fondo-crema">
+            <div class="card bg-white border-0 rounded-3 shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-end gap-3 flex-wrap mb-4">
                     <div>
-                        <label class="form-label" for="buscar-perito">Buscar perito</label>
+                        <label class="form-label" for="buscar-perito">
+                            Buscar perito
+                        </label>
                         <input
                                 class="form-control"
                                 id="buscar-perito"
@@ -59,8 +69,8 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-2">
-                        <thead class="table-light">
+                    <table class="table align-middle mb-2 texto">
+                        <thead class="table-light texto-muted">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">NOMBRE COMPLETO</th>
