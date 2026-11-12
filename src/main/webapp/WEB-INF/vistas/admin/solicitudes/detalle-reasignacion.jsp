@@ -8,10 +8,8 @@
 
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet"
         href="${pageContext.request.contextPath}/assets/css/estilos.css">
 </head>
@@ -23,14 +21,17 @@
     <jsp:param name="seccionActiva" value="solicitudes"/>
   </jsp:include>
 
-  <main class="bg-white" style="flex: 1;">
-
-    <div class="p-3 fondo-crema row">
+  <main class="fondo-crema" style="flex: 1;">
+    <div class="p-3 bg-white row">
       <div class="col-8">
-        <p class="texto mb-0">Gestión y asignación de peritos judiciales</p>
+        <p class="texto mb-0">
+          Gestión y asignación de peritos judiciales
+        </p>
       </div>
       <div class="col-4">
-        <p class="texto-verde fw-bold mb-1">Administrador/Morelos</p>
+        <p class="texto-verde fw-bold mb-1">
+          Administrador/Morelos
+        </p>
       </div>
     </div>
 
@@ -48,13 +49,10 @@
       <span class="badge-proceso rounded d-inline-block mb-4">
                 En proceso
             </span>
-    </div>
 
-    <div class="px-4 mt-4">
-      <section class="row g-4">
-
+      <section class="row g-4" aria-label="Detalle y reasignación">
         <article class="col-12 col-xl-6">
-          <div class="card h-100 border rounded-4">
+          <div class="card bg-white h-100 border rounded-4">
             <div class="card-body p-4">
               <h2 class="h4 texto-verde mb-4">
                 Solicitud y seguimiento
@@ -92,7 +90,7 @@
         </article>
 
         <article class="col-12 col-xl-6">
-          <div class="card h-100 border rounded-4">
+          <div class="card bg-white h-100 border rounded-4">
             <div class="card-body p-4">
               <h2 class="h4 texto-verde mb-3">Reasignar perito</h2>
 
@@ -101,10 +99,8 @@
               </p>
 
               <div class="mb-4">
-                <label class="form-label" for="nuevoPerito">
-                  Nuevo perito
-                </label>
-                <select class="form-select" id="nuevoPerito">
+                <label class="form-label" for="nuevoPerito">Nuevo perito</label>
+                <select class="form-select" id="nuevoPerito" name="nuevoPerito">
                   <option selected>María Torres · 4 en proceso</option>
                   <option>Gabriel Ortega · 2 en proceso</option>
                   <option>Elena Ruiz · 3 en proceso</option>
@@ -115,7 +111,7 @@
                 <label class="form-label" for="motivo">
                   Motivo de reasignación
                 </label>
-                <select class="form-select" id="motivo">
+                <select class="form-select" id="motivo" name="motivo">
                   <option selected>Redistribución de carga de trabajo</option>
                   <option>Solicitud del juzgado</option>
                   <option>Indisponibilidad del perito</option>
@@ -129,16 +125,14 @@
                 <span>Se conserva el historial de asignaciones.</span>
               </div>
 
-              <button class="btn btn-primario px-4 py-2" type="button">
+              <button class="btn btn-primario" type="button">
                 Confirmar reasignación
               </button>
             </div>
           </div>
         </article>
-
       </section>
     </div>
-
   </main>
 </div>
 </body>
