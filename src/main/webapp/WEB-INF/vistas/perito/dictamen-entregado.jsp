@@ -4,76 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Peritaje terminado · Peritos Morelos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/dictamen-entregado.css" rel="stylesheet">
+    <title>Peritaje terminado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/dictamen-entregado.css">
 </head>
-<body>
-<div class="d-flex min-vh-100">
+<body class="bg-light" style="overflow-x: hidden;">
 
-    <aside class="sidebar offcanvas-lg offcanvas-start d-flex flex-column flex-shrink-0" id="menu" tabindex="-1">
-        <div class="brand p-3"><img src="${pageContext.request.contextPath}/img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos"></div>
-        <p class="etiqueta-menu px-3 pt-4 mb-2">Portal del perito</p>
-        <nav class="nav flex-column px-3 gap-2" aria-label="Navegación del perito">
-            <a class="nav-link" href="#"><i class="bi bi-file-earmark-text"></i>Mis asignaciones</a>
-            <a class="nav-link active" href="#" aria-current="page"><i class="bi bi-file-earmark-text"></i>Dictámenes</a>
-            <a class="nav-link" href="#"><i class="bi bi-people"></i>Mi perfil</a>
-        </nav>
-        <div class="mt-auto p-3">
-            <p class="cobertura-titulo">Cobertura estatal</p>
-            <p class="cobertura-texto">Todos los municipios<br>de Morelos</p>
-            <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="avatar d-flex align-items-center justify-content-center">JG</span>
-                <span class="fw-semibold" style="font-size: .75rem;">Juan Gabriel</span>
+<div class="container-fluid p-0 d-flex">
+    <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
+        <jsp:param name="seccionActiva" value="dictamenes" />
+    </jsp:include>
+
+    <main class="fondo-crema" style="flex: 1;">
+
+        <div class="p-3 bg-white row">
+            <div class="col-8">
+                <p class="mb-0">Gestión y asignación de peritos judiciales</p>
             </div>
-            <button class="btn btn-outline-sagp" type="button">Cerrar sesión</button>
+            <div class="col-4">
+                <p class="texto-verde fw-bold mb-1">Perito/Morelos</p>
+            </div>
         </div>
-    </aside>
 
-    <div class="flex-grow-1 d-flex flex-column">
+        <div class="px-4 my-4">
+            <p class="texto-verde fw-bold text-uppercase mb-1" style="font-size: 0.75rem;">Perito / Morelos</p>
+            <h2 class="fw-bold">Peritaje terminado</h2>
+            <p class="texto-dorado">SOL-2026-0148 · Dictamen final recibido.</p>
+        </div>
 
-        <header class="barra-superior">
-            <button class="btn btn-outline-sagp d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">Menú</button>
-            <span class="text-secondary">Gestión y asignación de peritos judiciales</span>
-            <span class="ms-auto texto-sagp" style="font-size: .75rem;">MORELOS &nbsp;/&nbsp; Perito</span>
-        </header>
-
-        <main class="contenido">
-            <p class="crumb">Perito / Morelos</p>
-            <h1 class="titulo-vista">Peritaje terminado</h1>
-            <p class="subtitulo-vista">SOL-2026-0148 · Dictamen final recibido.</p>
-
-            <div class="alert aviso mb-4" role="status">
-                <strong>Entrega bloqueada para edición</strong><br>
-                Para corregir, solicite autorización al administrador.
+        <div class="px-4 mb-4">
+            <div class="alert alerta-verde p-3" role="status">
+                <h5 class="fw-bold mb-1">Entrega bloqueada para edición</h5>
+                <p class="mb-0">Para corregir, solicite autorización al administrador.</p>
             </div>
+        </div>
 
-            <div class="card mb-4"><div class="card-body">
-                <span class="chip badge rounded-pill mb-3">Entregado</span>
-                <h2 class="card-titulo" id="nombreDictamen">Dictamen_SOL-2026-0148.pdf</h2>
-                <p class="dato-label">Inicio</p><p class="dato-valor">22 oct 2026 · 09:42 h</p>
-                <p class="dato-label">Término</p><p class="dato-valor" id="terminoDictamen">29 oct 2026 · 20:25:18 h</p>
-                <p class="text-secondary">Registrado al marcar el peritaje como terminado.</p>
-                <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-outline-sagp" type="button" id="btnVerDictamen">Ver dictamen</button>
-                    <span title="Solo el administrador puede habilitar una corrección de la entrega">
-                        <button class="btn btn-sagp" type="button" disabled>Reemplazar PDF</button>
-                    </span>
+        <div class="px-4 mb-4">
+            <div class="card shadow border-0 rounded-3 bg-white">
+                <div class="card-body">
+                    <span class="badge badge-proceso rounded-pill mb-3">Entregado</span>
+                    <h5 class="fw-bold mb-3" id="nombreDictamen">Dictamen_SOL-2026-0148.pdf</h5>
+                    <p class="texto small mb-0">Inicio</p>
+                    <p class="fw-semibold">22 oct 2026 · 09:42 h</p>
+                    <p class="texto small mb-0">Término</p>
+                    <p class="fw-semibold" id="terminoDictamen">29 oct 2026 · 20:25:18 h</p>
+                    <p class="texto">Registrado al marcar el peritaje como terminado.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <button class="btn btn-secundario" type="button" id="btnVerDictamen">Ver dictamen</button>
+                        <span title="Solo el administrador puede habilitar una corrección de la entrega">
+                            <button class="btn btn-primario" type="button" disabled>Reemplazar PDF</button>
+                        </span>
+                    </div>
+                    <div class="alert alerta-verde mt-3 mb-0 d-none" id="avisoVer" role="status"></div>
+                    <p class="texto mt-3 mb-0">Solo el administrador puede habilitar una corrección de la entrega.</p>
                 </div>
-                <div class="alert aviso mt-3 mb-0 d-none" id="avisoVer" role="status"></div>
-                <p class="text-secondary mt-3 mb-0">Solo el administrador puede habilitar una corrección de la entrega.</p>
-            </div></div>
+            </div>
+        </div>
 
-            <button class="btn btn-outline-sagp" type="button">Volver a mis casos</button>
-        </main>
-    </div>
+        <div class="px-4 pb-4">
+            <button class="btn btn-secundario" type="button">Volver a mis casos</button>
+        </div>
+    </main>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/dictamen-entregado.js"></script>
 </body>
 </html>
