@@ -27,6 +27,6 @@ public class SolicitudServlet extends HttpServlet {
         request.setAttribute("listaSolicitudes", solicitudes);
 
         // 3. Redirige a la vista JSP
-        request.getRequestDispatcher("/solicitudes.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/vistas/solicitudes.jsp").forward(request, response);
     }
 }
