@@ -21,8 +21,8 @@
         <jsp:param name="seccionActiva" value="peritos"/>
     </jsp:include>
 
-    <main class="bg-white" style="flex: 1;">
-        <div class="p-3 fondo-crema row">
+    <main class="fondo-crema" style="flex: 1;">
+        <div class="p-3 bg-white row">
             <div class="col-8">
                 <p class="texto mb-0">Gestión y asignación de peritos judiciales</p>
             </div>
@@ -66,7 +66,9 @@
                         </div>
 
                         <div class="col-12 col-lg-6">
-                            <label class="form-label" for="correo">Correo electrónico</label>
+                            <label class="form-label" for="correo">
+                                Correo electrónico
+                            </label>
                             <input class="form-control"
                                    id="correo"
                                    name="correo"
