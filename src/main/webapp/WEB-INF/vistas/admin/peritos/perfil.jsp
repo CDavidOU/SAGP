@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,41 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Perfil del perito | SAGP</title>
 
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet">
-
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-            rel="stylesheet">
-
-    <link
-            href="${pageContext.request.contextPath}/assets/css/estilos.css"
-            rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/assets/css/estilos.css">
 </head>
 
-<body class="fondo-crema">
-<div class="d-flex min-vh-100">
+<body class="bg-light" style="overflow-x: hidden;">
+<div class="container-fluid p-0 d-flex">
 
     <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
         <jsp:param name="seccionActiva" value="peritos"/>
     </jsp:include>
 
-    <div class="flex-grow-1 min-vh-100">
+    <main class="bg-white" style="flex: 1;">
+        <div class="p-3 fondo-crema row">
+            <div class="col-8">
+                <p class="texto mb-0">Gestión y asignación de peritos judiciales</p>
+            </div>
+            <div class="col-4">
+                <p class="texto-verde fw-bold mb-1">Administrador/Morelos</p>
+            </div>
+        </div>
 
-        <header class="bg-white border-bottom px-4 py-3 d-flex
-                       justify-content-between align-items-center">
-            <span class="texto">
-                Gestión y asignación de peritos judiciales
-            </span>
-
-            <span class="texto-verde fw-semibold text-nowrap">
-                Administrador&nbsp; / &nbsp;Morelos
-            </span>
-        </header>
-
-        <main class="container-fluid px-4 px-lg-5 py-4 py-lg-5">
-            <div class="texto-verde small fw-semibold mb-3">
+        <div class="px-4 my-4">
+            <div class="texto-verde fw-semibold mb-3">
                 ADMINISTRADOR / MORELOS
             </div>
 
@@ -50,87 +42,75 @@
                 PER-001 · Datos personales, especialidades y seguimiento de casos.
             </p>
 
-            <section class="bg-white border rounded-4 p-4 p-lg-4 mb-4">
+            <section class="bg-white border rounded-4 p-4 mb-4">
                 <h2 class="h4 texto-verde mb-4">Datos del perito</h2>
 
                 <form>
                     <div class="row g-3">
                         <div class="col-12 col-lg-6">
                             <label class="form-label" for="nombre">Nombre</label>
-                            <input
-                                    class="form-control"
-                                    id="nombre"
-                                    name="nombre"
-                                    type="text"
-                                    value="Lucía">
+                            <input class="form-control"
+                                   id="nombre"
+                                   name="nombre"
+                                   type="text"
+                                   value="Lucía">
                         </div>
 
                         <div class="col-12 col-lg-6">
                             <label class="form-label" for="apellidos">Apellidos</label>
-                            <input
-                                    class="form-control"
-                                    id="apellidos"
-                                    name="apellidos"
-                                    type="text"
-                                    value="Hernández López">
+                            <input class="form-control"
+                                   id="apellidos"
+                                   name="apellidos"
+                                   type="text"
+                                   value="Hernández López">
                         </div>
 
                         <div class="col-12 col-lg-6">
-                            <label class="form-label" for="correo">
-                                Correo electrónico
-                            </label>
-                            <input
-                                    class="form-control"
-                                    id="correo"
-                                    name="correo"
-                                    type="email"
-                                    value="lucia.hernandez@poderjudicial.gob.mx">
+                            <label class="form-label" for="correo">Correo electrónico</label>
+                            <input class="form-control"
+                                   id="correo"
+                                   name="correo"
+                                   type="email"
+                                   value="lucia.hernandez@poderjudicial.gob.mx">
                         </div>
 
                         <div class="col-12 col-lg-6">
                             <label class="form-label" for="telefonoEdad">
                                 Teléfono / Edad
                             </label>
-                            <input
-                                    class="form-control"
-                                    id="telefonoEdad"
-                                    name="telefonoEdad"
-                                    type="text"
-                                    value="777 234 5678 · 36 años">
+                            <input class="form-control"
+                                   id="telefonoEdad"
+                                   name="telefonoEdad"
+                                   type="text"
+                                   value="777 234 5678 · 36 años">
                         </div>
                     </div>
 
                     <div class="row g-3 align-items-center mt-2">
                         <div class="col-12 col-lg-4">
-                            <label class="alerta-verde d-flex align-items-center
-                                          gap-3 p-3 mb-0">
-                                <input
-                                        class="form-check-input m-0"
-                                        type="checkbox"
-                                        name="especialidades"
-                                        value="familiar-psicologia"
-                                        checked>
+                            <label class="alerta-verde d-flex align-items-center gap-3 p-3 mb-0">
+                                <input class="form-check-input m-0"
+                                       type="checkbox"
+                                       name="especialidades"
+                                       value="familiar-psicologia"
+                                       checked>
                                 <span>Familiar / Psicología</span>
                             </label>
                         </div>
 
                         <div class="col-12 col-lg-4">
-                            <label class="alerta-verde d-flex align-items-center
-                                          gap-3 p-3 mb-0">
-                                <input
-                                        class="form-check-input m-0"
-                                        type="checkbox"
-                                        name="especialidades"
-                                        value="civil-psicologia"
-                                        checked>
+                            <label class="alerta-verde d-flex align-items-center gap-3 p-3 mb-0">
+                                <input class="form-check-input m-0"
+                                       type="checkbox"
+                                       name="especialidades"
+                                       value="civil-psicologia"
+                                       checked>
                                 <span>Civil / Psicología</span>
                             </label>
                         </div>
 
                         <div class="col-12 col-lg-4">
-                            <button
-                                    class="btn btn-primario w-100 py-2"
-                                    type="button">
+                            <button class="btn btn-primario w-100 py-2" type="button">
                                 Guardar cambios
                             </button>
                         </div>
@@ -143,15 +123,13 @@
                 <div class="row align-items-center g-3">
                     <div class="col-12 col-lg-3">
                         <div class="form-check form-switch mb-0">
-                            <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    role="switch"
-                                    id="estadoPerito"
-                                    checked>
-                            <label
-                                    class="form-check-label texto-verde fw-semibold"
-                                    for="estadoPerito">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   role="switch"
+                                   id="estadoPerito"
+                                   checked>
+                            <label class="form-check-label texto-verde fw-semibold"
+                                   for="estadoPerito">
                                 Activo
                             </label>
                         </div>
@@ -198,8 +176,8 @@
                             <td>SOL-2026-0131 · EXP-320/2026</td>
                             <td>Familiar · Jiutepec</td>
                             <td>
-                                <span class="badge bg-light text-secondary
-                                             border d-inline-block rounded px-3 py-2">
+                                <span class="badge bg-light text-secondary border
+                                             d-inline-block rounded px-3 py-2">
                                     Terminado
                                 </span>
                             </td>
@@ -209,8 +187,8 @@
                     </table>
                 </div>
             </section>
-        </main>
-    </div>
+        </div>
+    </main>
 </div>
 </body>
 </html>
