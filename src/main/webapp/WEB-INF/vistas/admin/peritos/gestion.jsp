@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Gestión de peritos | SAGP</title>
 
     <link
@@ -16,173 +15,132 @@
             rel="stylesheet">
 
     <link
-            href="${pageContext.request.contextPath}/assets/css/peritos.css"
+            href="${pageContext.request.contextPath}/assets/css/estilos.css"
             rel="stylesheet">
 </head>
 
-<body>
-<header class="topbar">
-    <div class="brand">
-        <img
-                class="brand-logo"
-                src="${pageContext.request.contextPath}/assets/img/morelos-logo-horizontal.jpg"
-                alt="Gobierno del Estado de Morelos">
+<body class="fondo-crema">
+<div class="d-flex min-vh-100">
+    <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
+        <jsp:param name="seccionActiva" value="peritos"/>
+    </jsp:include>
 
-        <span class="brand-divider" aria-hidden="true"></span>
+    <div class="flex-grow-1 min-vh-100">
+        <header class="bg-white border-bottom d-flex align-items-center
+                           justify-content-between px-4 px-lg-5 py-3">
+                <span class="texto">
+                    Gestión y asignación de peritos judiciales
+                </span>
 
-        <span class="brand-system-name">
-                Gestión y asignación de peritos judiciales
-            </span>
+            <span class="texto-verde fw-semibold text-nowrap">
+                    Administrador&nbsp; / &nbsp;Morelos
+                </span>
+        </header>
+
+        <main class="container-fluid px-4 px-lg-5 py-4">
+            <div class="texto-verde fw-semibold small mb-4">
+                ADMINISTRADOR / MORELOS
+            </div>
+
+            <h1 class="texto-verde fw-semibold mb-2">
+                Gestión de peritos
+            </h1>
+
+            <p class="texto mb-4">
+                Consulta, registra y actualiza los perfiles del directorio estatal.
+            </p>
+
+            <section aria-label="Directorio de peritos">
+                <div class="row align-items-end g-3 mb-4">
+                    <div class="col-12 col-lg-8">
+                        <label for="buscar-perito" class="form-label texto-verde">
+                            Buscar perito
+                        </label>
+
+                        <input
+                                id="buscar-perito"
+                                name="buscar"
+                                type="search"
+                                class="form-control"
+                                placeholder="Ej. Juan Carlos Pérez">
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <button class="btn btn-primario w-100 w-lg-auto" type="button">
+                            Agregar Nuevo Perito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white border rounded-3 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="fondo-crema">
+                            <tr>
+                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
+                                    ID
+                                </th>
+                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
+                                    NOMBRE COMPLETO
+                                </th>
+                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
+                                    MATERIA / ESPECIALIDAD PRINCIPAL
+                                </th>
+                                <th scope="col" class="texto-muted fw-semibold small px-3 py-3">
+                                    ESTADO
+                                </th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td class="texto px-3 py-3">PER-001</td>
+                                <td class="texto px-3 py-3">Lucía Hernández López</td>
+                                <td class="texto px-3 py-3">Familiar / Psicología</td>
+                                <td class="px-3 py-3">
+                                    <span class="badge-proceso rounded">Activo</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="texto px-3 py-3">PER-002</td>
+                                <td class="texto px-3 py-3">Carlos Méndez Ruiz</td>
+                                <td class="texto px-3 py-3">Civil / Grafoscopía</td>
+                                <td class="px-3 py-3">
+                                    <span class="badge-proceso rounded">Activo</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="texto px-3 py-3">PER-003</td>
+                                <td class="texto px-3 py-3">María Torres García</td>
+                                <td class="texto px-3 py-3">Familiar / Psicología</td>
+                                <td class="px-3 py-3">
+                                    <span class="badge-proceso rounded">Activo</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="texto px-3 py-3">PER-004</td>
+                                <td class="texto px-3 py-3">Adriana López Morales</td>
+                                <td class="texto px-3 py-3">Civil / Valuación</td>
+                                <td class="px-3 py-3">
+                                            <span class="badge bg-light texto-muted rounded">
+                                                Inactivo
+                                            </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p class="texto mt-3 mb-0">
+                    Selecciona un perito para consultar sus datos y casos históricos.
+                </p>
+            </section>
+        </main>
     </div>
-
-    <div class="user-label">MORELOS&nbsp; / &nbsp;Administrador</div>
-</header>
-
-<div class="layout">
-    <aside class="sidebar">
-        <p class="sidebar-title">ADMINISTRACIÓN</p>
-
-        <nav class="sidebar-nav" aria-label="Navegación de administración">
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-grid" aria-hidden="true"></i>
-                <span>Resumen</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent"
-                   aria-hidden="true"></i>
-                <span>Solicitudes</span>
-            </a>
-
-            <a class="nav-link-item active" href="#" aria-current="page">
-                <i class="bi bi-people" aria-hidden="true"></i>
-                <span>Peritos</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-bar-chart" aria-hidden="true"></i>
-                <span>Carga de trabajo</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent"
-                   aria-hidden="true"></i>
-                <span>Asignación manual</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent"
-                   aria-hidden="true"></i>
-                <span>Branding / Tema</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <div class="coverage-title">Cobertura estatal</div>
-
-            <p class="coverage-description">
-                Todos los municipios<br>
-                de Morelos
-            </p>
-
-            <div class="profile">
-                <div class="profile-initials" aria-hidden="true">AM</div>
-
-                <div>
-                    <div class="profile-name">Ana Martínez</div>
-                    <div class="profile-role">Administradora</div>
-                </div>
-            </div>
-
-            <a class="logout-link" href="#">
-                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
-                <span>Cerrar sesión</span>
-            </a>
-        </div>
-    </aside>
-
-    <main class="content">
-        <div class="eyebrow">ADMINISTRADOR / MORELOS</div>
-
-        <h1>Gestión de peritos</h1>
-
-        <p class="page-description">
-            Consulta, registra y actualiza los perfiles del directorio estatal.
-        </p>
-
-        <section class="directory" aria-label="Directorio de peritos">
-            <div class="directory-toolbar">
-                <div class="search-field">
-                    <label for="buscar-perito">Buscar perito</label>
-
-                    <input
-                            id="buscar-perito"
-                            name="buscar"
-                            type="search"
-                            placeholder="Ej. Juan Carlos Pérez">
-                </div>
-
-                <button class="primary-button" type="button">
-                    Agregar Nuevo Perito
-                </button>
-            </div>
-
-            <div class="table-container">
-                <table class="peritos-table">
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">NOMBRE COMPLETO</th>
-                        <th scope="col">MATERIA / ESPECIALIDAD PRINCIPAL</th>
-                        <th scope="col">ESTADO</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        <td>PER-001</td>
-                        <td>Lucía Hernández López</td>
-                        <td>Familiar / Psicología</td>
-                        <td>
-                            <span class="status-badge status-active">Activo</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>PER-002</td>
-                        <td>Carlos Méndez Ruiz</td>
-                        <td>Civil / Grafoscopía</td>
-                        <td>
-                            <span class="status-badge status-active">Activo</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>PER-003</td>
-                        <td>María Torres García</td>
-                        <td>Familiar / Psicología</td>
-                        <td>
-                            <span class="status-badge status-active">Activo</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>PER-004</td>
-                        <td>Adriana López Morales</td>
-                        <td>Civil / Valuación</td>
-                        <td>
-                            <span class="status-badge status-inactive">Inactivo</span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p class="table-help">
-                Selecciona un perito para consultar sus datos y casos históricos.
-            </p>
-        </section>
-    </main>
 </div>
 </body>
 </html>
