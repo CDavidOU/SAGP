@@ -4,108 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Asignación automática · Peritos Morelos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/asignacion-automatica.css" rel="stylesheet">
+    <title>Asignación automática</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/asignacion-automatica.css">
 </head>
-<body>
-<div class="d-flex min-vh-100">
+<body class="bg-light" style="overflow-x: hidden;">
 
-    <aside class="sidebar offcanvas-lg offcanvas-start d-flex flex-column flex-shrink-0" id="menu" tabindex="-1">
-        <div class="brand p-3"><img src="${pageContext.request.contextPath}/img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos" class="img-fluid"></div>
-        <nav class="nav flex-column p-3 gap-1" aria-label="Navegación del coordinador">
-            <a class="nav-link" href="#">Resumen</a>
-            <a class="nav-link active" href="#" aria-current="page">Solicitudes</a>
-            <a class="nav-link" href="#">Peritos</a>
-            <a class="nav-link" href="#">Carga de trabajo</a>
-            <a class="nav-link" href="#">Asignación manual</a>
-            <a class="nav-link" href="#">Branding / Tema</a>
-        </nav>
-        <div class="mt-auto p-3 border-top">
-            <div class="d-flex align-items-center gap-2 mb-3">
-                <span class="avatar d-flex align-items-center justify-content-center">JA</span>
-                <span class="small">Johana Alvarez<br><span class="text-secondary">Coordinadora de peritos</span></span>
+<div class="container-fluid p-0 d-flex">
+    <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
+        <jsp:param name="seccionActiva" value="solicitudes" />
+    </jsp:include>
+
+    <main class="fondo-crema" style="flex: 1;">
+
+        <div class="p-3 bg-white row">
+            <div class="col-8">
+                <p class="mb-0">Gestión y asignación de peritos judiciales</p>
             </div>
-            <button class="btn btn-outline-sagp w-100" type="button">Cerrar sesión</button>
+            <div class="col-4">
+                <p class="texto-verde fw-bold mb-1">Administrador/Morelos</p>
+            </div>
         </div>
-    </aside>
 
-    <main class="flex-grow-1 p-3 p-lg-5">
-        <button class="btn btn-outline-sagp d-lg-none mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">Menú</button>
+        <div class="px-4 my-4">
+            <p class="texto-verde fw-bold text-uppercase mb-1" style="font-size: 0.75rem;">Solicitudes / <span id="idSolicitud"></span></p>
+            <h2 class="fw-bold" id="titulo">Asignación automática</h2>
+            <p class="texto-dorado" id="subtitulo">Primero menor carga; en caso de empate, orden alfabético por nombre y apellidos.</p>
+        </div>
 
-        <p class="crumb mb-1">Solicitudes / <span id="idSolicitud"></span></p>
-        <h1 class="h2 mb-1" id="titulo">Asignación automática</h1>
-        <p class="text-secondary" id="subtitulo">Primero menor carga; en caso de empate, orden alfabético por nombre y apellidos.</p>
+        <div class="px-4 pb-4">
 
-        <!-- propuesta -->
-        <section id="vistaPropuesta">
-            <div class="row g-3 mb-3">
-                <div class="col-lg-7">
-                    <div class="card h-100"><div class="card-body">
-                        <h2 class="h6 mb-3">Datos de la solicitud</h2>
-                        <p class="dato-label mb-0">Juzgado y municipio</p><p class="fw-semibold" id="dJuzgado"></p>
-                        <p class="dato-label mb-0">Materia y especialidad</p><p class="fw-semibold" id="dMateria"></p>
-                        <p class="dato-label mb-0">Expediente</p><p class="fw-semibold" id="dExpediente"></p>
-                        <p class="small text-secondary mb-0">Cobertura: todos los peritos atienden todos los municipios de Morelos.</p>
-                    </div></div>
+            <!-- propuesta -->
+            <section id="vistaPropuesta">
+                <div class="row g-3 mb-3">
+                    <div class="col-lg-7">
+                        <div class="card shadow border-0 rounded-3 h-100 bg-white">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-3">Datos de la solicitud</h5>
+                                <p class="texto small mb-0">Juzgado y municipio</p><p class="fw-semibold" id="dJuzgado"></p>
+                                <p class="texto small mb-0">Materia y especialidad</p><p class="fw-semibold" id="dMateria"></p>
+                                <p class="texto small mb-0">Expediente</p><p class="fw-semibold" id="dExpediente"></p>
+                                <p class="texto small mb-0">Cobertura: todos los peritos atienden todos los municipios de Morelos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card shadow border-0 rounded-3 h-100 bg-white">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-3">Perito seleccionado</h5>
+                                <span class="badge badge-proceso rounded-pill mb-2" id="chip"></span>
+                                <p class="h3 fw-bold" id="pNombre"></p>
+                                <p class="texto" id="pMateria"></p>
+                                <p class="texto small mb-0">Peritajes en proceso</p>
+                                <p class="fw-semibold mb-2" id="pCarga"></p>
+                                <p class="small mb-0 texto-verde" id="pMotivo"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="card h-100"><div class="card-body">
-                        <h2 class="h6 mb-3">Perito seleccionado</h2>
-                        <span class="chip badge rounded-pill mb-2" id="chip"></span>
-                        <p class="h3" id="pNombre"></p>
-                        <p class="text-secondary" id="pMateria"></p>
-                        <p class="dato-label mb-0">Peritajes en proceso</p>
-                        <p class="fw-semibold mb-2" id="pCarga"></p>
-                        <p class="small mb-0 texto-sagp" id="pMotivo"></p>
-                    </div></div>
+
+                <div class="border rounded bg-white overflow-hidden shadow-sm mb-3">
+                    <div class="table-responsive">
+                        <table class="table mb-0 align-middle">
+                            <caption class="visually-hidden">Peritos compatibles con la solicitud</caption>
+                            <thead class="table-light">
+                            <tr>
+                                <th scope="col" class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.5px;">PERITO COMPATIBLE</th>
+                                <th scope="col" class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.5px;">ESTADO</th>
+                                <th scope="col" class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.5px;">EN PROCESO</th>
+                                <th scope="col" class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.5px;">RESULTADO</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tabla"></tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card mb-3"><div class="table-responsive">
-                <table class="table align-middle mb-0">
-                    <caption class="visually-hidden">Peritos compatibles con la solicitud</caption>
-                    <thead><tr><th scope="col">Perito compatible</th><th scope="col">Estado</th><th scope="col">En proceso</th><th scope="col">Resultado</th></tr></thead>
-                    <tbody id="tabla"></tbody>
-                </table>
-            </div></div>
+                <div class="alert alerta-verde p-3 shadow" role="status" id="aviso"></div>
 
-            <div class="alert aviso" role="status" id="aviso"></div>
+                <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-primario" type="button" id="btnConfirmar">Confirmar asignación</button>
+                    <button class="btn btn-secundario" type="button">Volver a solicitudes</button>
+                    <button class="btn btn-secundario" type="button" id="btnSinCandidatos">Ver caso sin candidatos</button>
+                </div>
+            </section>
 
-            <div class="d-flex flex-wrap gap-2">
-                <button class="btn btn-sagp" type="button" id="btnConfirmar">Confirmar asignación</button>
-                <button class="btn btn-outline-sagp" type="button">Volver a solicitudes</button>
-                <button class="btn btn-outline-sagp" type="button" id="btnSinCandidatos">Ver caso sin candidatos</button>
-            </div>
-        </section>
+            <!-- asignación confirmada -->
+            <section id="vistaConfirmada" class="d-none">
+                <div class="card shadow border-0 rounded-3 bg-white">
+                    <div class="card-body">
+                        <span class="badge badge-proceso rounded-pill mb-2">Operación completada</span>
+                        <h5 class="fw-bold mb-1" id="cNombre"></h5>
+                        <p class="mb-1" id="cInicio"></p>
+                        <p class="mb-3" id="cEstado"></p>
+                        <button class="btn btn-primario" type="button" id="btnReiniciar">Volver a solicitudes</button>
+                    </div>
+                </div>
+            </section>
 
-        <!-- asignación confirmada -->
-        <section id="vistaConfirmada" class="d-none">
-            <div class="card"><div class="card-body">
-                <span class="chip badge rounded-pill mb-2">Operación completada</span>
-                <p class="h5 mb-1" id="cNombre"></p>
-                <p class="mb-1" id="cInicio"></p>
-                <p class="mb-3" id="cEstado"></p>
-                <button class="btn btn-sagp" type="button" id="btnReiniciar">Volver a solicitudes</button>
-            </div></div>
-        </section>
+            <!-- sin candidatos -->
+            <section id="vistaSinCandidatos" class="d-none">
+                <div class="card shadow border-0 rounded-3 bg-white">
+                    <div class="card-body">
+                        <span class="badge badge-pendiente rounded-pill mb-2">Sin perito disponible</span>
+                        <h5 class="fw-bold mb-1">No hay peritos disponibles</h5>
+                        <p class="mb-3">No se encontró un perito activo con la materia y especialidad requeridas. La solicitud permanece por asignar.</p>
+                        <button class="btn btn-primario" type="button" id="btnReiniciar2">Volver a solicitudes</button>
+                    </div>
+                </div>
+            </section>
 
-        <!-- sin candidatos -->
-        <section id="vistaSinCandidatos" class="d-none">
-            <div class="card"><div class="card-body">
-                <span class="chip badge rounded-pill mb-2">Sin perito disponible</span>
-                <p class="h5 mb-1">No hay peritos disponibles</p>
-                <p class="mb-3">No se encontró un perito activo con la materia y especialidad requeridas. La solicitud permanece por asignar.</p>
-                <button class="btn btn-sagp" type="button" id="btnReiniciar2">Volver a solicitudes</button>
-            </div></div>
-        </section>
+        </div>
     </main>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/asignacion-automatica.js"></script>
 </body>
 </html>
