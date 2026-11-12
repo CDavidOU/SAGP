@@ -62,10 +62,10 @@
                                 placeholder="Ej. Juan Carlos Pérez">
                     </div>
 
-                    <button class="btn btn-primario" type="button">
+                    <a href="${pageContext.request.contextPath}/admin/peritos/registrar" class="btn btn-primario">
                         <i class="bi bi-person-plus me-2" aria-hidden="true"></i>
                         Agregar nuevo perito
-                    </button>
+                    </a>
                 </div>
 
                 <div class="table-responsive">

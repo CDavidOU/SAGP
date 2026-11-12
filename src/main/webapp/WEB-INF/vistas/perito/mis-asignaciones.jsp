@@ -79,7 +79,7 @@
                 </span>
             </div>
 
-            <a href="#"
+            <a href="${pageContext.request.contextPath}/login"
                class="btn btn-secundario w-100 mx-3 mb-3"
                style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">
                 Cerrar sesión

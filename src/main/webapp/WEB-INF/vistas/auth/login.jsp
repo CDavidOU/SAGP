@@ -131,6 +131,16 @@
           Olvidé mi contraseña
         </a>
 
+        <a
+                class="forgot-link"
+                href="${pageContext.request.contextPath}/admin/peritos">
+          Perito
+        </a>
+        <a
+                class="forgot-link"
+                href="${pageContext.request.contextPath}/perito/asignaciones">
+          admin
+        </a>
         <p class="form-footer">
           Sistema de Gestión y Asignación de Peritos Judiciales
         </p>
