@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,38 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Detalle del peritaje | SAGP</title>
 
-  <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-          rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-  <link
-          href="${pageContext.request.contextPath}/assets/css/estilos.css"
-          rel="stylesheet">
+  <link rel="stylesheet"
+        href="${pageContext.request.contextPath}/assets/css/estilos.css">
 </head>
 
-<body class="fondo-crema">
-<div class="d-flex min-vh-100">
+<body class="bg-light" style="overflow-x: hidden;">
+<div class="container-fluid p-0 d-flex">
 
   <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
     <jsp:param name="seccionActiva" value="solicitudes"/>
   </jsp:include>
 
-  <div class="flex-grow-1 min-vh-100">
-    <header class="d-flex justify-content-between align-items-center bg-white px-4 py-3 border-bottom">
-                <span class="texto">
-                    Gestión y asignación de peritos judiciales
-                </span>
+  <main class="bg-white" style="flex: 1;">
 
-      <span class="texto-verde fw-semibold">
-                    Administrador/Morelos
-                </span>
-    </header>
+    <div class="p-3 fondo-crema row">
+      <div class="col-8">
+        <p class="texto mb-0">Gestión y asignación de peritos judiciales</p>
+      </div>
+      <div class="col-4">
+        <p class="texto-verde fw-bold mb-1">Administrador/Morelos</p>
+      </div>
+    </div>
 
-    <main class="container-fluid p-4 p-lg-5">
+    <div class="px-4 my-4">
       <div class="texto-verde fw-semibold mb-4">
         SOLICITUDES / SOL-2026-0148
       </div>
@@ -49,10 +46,13 @@
       </p>
 
       <span class="badge-proceso rounded d-inline-block mb-4">
-                    En proceso
-                </span>
+                En proceso
+            </span>
+    </div>
 
+    <div class="px-4 mt-4">
       <section class="row g-4">
+
         <article class="col-12 col-xl-6">
           <div class="card h-100 border rounded-4">
             <div class="card-body p-4">
@@ -135,9 +135,11 @@
             </div>
           </div>
         </article>
+
       </section>
-    </main>
-  </div>
+    </div>
+
+  </main>
 </div>
 </body>
 </html>
