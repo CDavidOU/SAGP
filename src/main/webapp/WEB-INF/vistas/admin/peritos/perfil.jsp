@@ -15,210 +15,202 @@
             rel="stylesheet">
 
     <link
-            href="${pageContext.request.contextPath}/assets/css/perfil-perito.css"
+            href="${pageContext.request.contextPath}/assets/css/estilos.css"
             rel="stylesheet">
 </head>
 
-<body>
-<header class="topbar">
-    <div class="brand">
-        <img
-                class="brand-logo"
-                src="${pageContext.request.contextPath}/assets/img/morelos-logo-horizontal.jpg"
-                alt="Gobierno del Estado de Morelos">
+<body class="fondo-crema">
+<div class="d-flex min-vh-100">
 
-        <span class="brand-divider" aria-hidden="true"></span>
+    <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
+        <jsp:param name="seccionActiva" value="peritos"/>
+    </jsp:include>
 
-        <span class="brand-system-name">
+    <div class="flex-grow-1 min-vh-100">
+
+        <header class="bg-white border-bottom px-4 py-3 d-flex
+                       justify-content-between align-items-center">
+            <span class="texto">
                 Gestión y asignación de peritos judiciales
             </span>
+
+            <span class="texto-verde fw-semibold text-nowrap">
+                Administrador&nbsp; / &nbsp;Morelos
+            </span>
+        </header>
+
+        <main class="container-fluid px-4 px-lg-5 py-4 py-lg-5">
+            <div class="texto-verde small fw-semibold mb-3">
+                ADMINISTRADOR / MORELOS
+            </div>
+
+            <h1 class="texto-verde mb-2">Lucía Hernández López</h1>
+
+            <p class="texto mb-4">
+                PER-001 · Datos personales, especialidades y seguimiento de casos.
+            </p>
+
+            <section class="bg-white border rounded-4 p-4 p-lg-4 mb-4">
+                <h2 class="h4 texto-verde mb-4">Datos del perito</h2>
+
+                <form>
+                    <div class="row g-3">
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="nombre">Nombre</label>
+                            <input
+                                    class="form-control"
+                                    id="nombre"
+                                    name="nombre"
+                                    type="text"
+                                    value="Lucía">
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="apellidos">Apellidos</label>
+                            <input
+                                    class="form-control"
+                                    id="apellidos"
+                                    name="apellidos"
+                                    type="text"
+                                    value="Hernández López">
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="correo">
+                                Correo electrónico
+                            </label>
+                            <input
+                                    class="form-control"
+                                    id="correo"
+                                    name="correo"
+                                    type="email"
+                                    value="lucia.hernandez@poderjudicial.gob.mx">
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <label class="form-label" for="telefonoEdad">
+                                Teléfono / Edad
+                            </label>
+                            <input
+                                    class="form-control"
+                                    id="telefonoEdad"
+                                    name="telefonoEdad"
+                                    type="text"
+                                    value="777 234 5678 · 36 años">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 align-items-center mt-2">
+                        <div class="col-12 col-lg-4">
+                            <label class="alerta-verde d-flex align-items-center
+                                          gap-3 p-3 mb-0">
+                                <input
+                                        class="form-check-input m-0"
+                                        type="checkbox"
+                                        name="especialidades"
+                                        value="familiar-psicologia"
+                                        checked>
+                                <span>Familiar / Psicología</span>
+                            </label>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <label class="alerta-verde d-flex align-items-center
+                                          gap-3 p-3 mb-0">
+                                <input
+                                        class="form-check-input m-0"
+                                        type="checkbox"
+                                        name="especialidades"
+                                        value="civil-psicologia"
+                                        checked>
+                                <span>Civil / Psicología</span>
+                            </label>
+                        </div>
+
+                        <div class="col-12 col-lg-4">
+                            <button
+                                    class="btn btn-primario w-100 py-2"
+                                    type="button">
+                                Guardar cambios
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="bg-white border rounded-3 p-4 mb-4"
+                     aria-label="Estado del perito">
+                <div class="row align-items-center g-3">
+                    <div class="col-12 col-lg-3">
+                        <div class="form-check form-switch mb-0">
+                            <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    role="switch"
+                                    id="estadoPerito"
+                                    checked>
+                            <label
+                                    class="form-check-label texto-verde fw-semibold"
+                                    for="estadoPerito">
+                                Activo
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-9">
+                        <p class="texto mb-0">
+                            Al desactivar, la fecha de inicio de inactividad
+                            se registra automáticamente.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="titulo-casos">
+                <h2 class="h4 texto-verde mb-4" id="titulo-casos">
+                    Casos / Peritajes históricos y activos
+                </h2>
+
+                <div class="table-responsive bg-white border rounded-3">
+                    <table class="table table-bordered align-middle mb-0">
+                        <thead class="table-light">
+                        <tr>
+                            <th scope="col">SOLICITUD / EXPEDIENTE</th>
+                            <th scope="col">JUZGADO</th>
+                            <th scope="col">ESTADO</th>
+                            <th scope="col">INICIO / TÉRMINO</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>SOL-2026-0148 · EXP-391/2026</td>
+                            <td>Familiar · Cuernavaca</td>
+                            <td>
+                                <span class="badge-proceso d-inline-block rounded">
+                                    En proceso
+                                </span>
+                            </td>
+                            <td>22 oct 2026 / Pendiente</td>
+                        </tr>
+
+                        <tr>
+                            <td>SOL-2026-0131 · EXP-320/2026</td>
+                            <td>Familiar · Jiutepec</td>
+                            <td>
+                                <span class="badge bg-light text-secondary
+                                             border d-inline-block rounded px-3 py-2">
+                                    Terminado
+                                </span>
+                            </td>
+                            <td>16 oct 2026 / 20 oct 2026</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
     </div>
-
-    <div class="user-label">MORELOS&nbsp; / &nbsp;Administrador</div>
-</header>
-
-<div class="layout">
-    <aside class="sidebar">
-        <p class="sidebar-title">ADMINISTRACIÓN</p>
-
-        <nav class="sidebar-nav" aria-label="Navegación de administración">
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-grid" aria-hidden="true"></i>
-                <span>Resumen</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent" aria-hidden="true"></i>
-                <span>Solicitudes</span>
-            </a>
-
-            <a class="nav-link-item active" href="#">
-                <i class="bi bi-people nav-icon-accent" aria-hidden="true"></i>
-                <span>Peritos</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-bar-chart" aria-hidden="true"></i>
-                <span>Carga de trabajo</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent" aria-hidden="true"></i>
-                <span>Asignación manual</span>
-            </a>
-
-            <a class="nav-link-item" href="#">
-                <i class="bi bi-file-earmark-text nav-icon-accent" aria-hidden="true"></i>
-                <span>Branding / Tema</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <div class="coverage-title">Cobertura estatal</div>
-
-            <p class="coverage-description">
-                Todos los municipios<br>
-                de Morelos
-            </p>
-
-            <div class="profile">
-                <div class="profile-initials" aria-hidden="true">AM</div>
-
-                <div>
-                    <div class="profile-name">Ana Martínez</div>
-                    <div class="profile-role">Administradora</div>
-                </div>
-            </div>
-
-            <a class="logout-link" href="#">
-                <i class="bi bi-box-arrow-left" aria-hidden="true"></i>
-                <span>Cerrar sesión</span>
-            </a>
-        </div>
-    </aside>
-
-    <main class="content">
-        <div class="eyebrow">ADMINISTRADOR / MORELOS</div>
-
-        <h1>Lucía Hernández López</h1>
-
-        <p class="page-description">
-            PER-001 · Datos personales, especialidades y seguimiento de casos.
-        </p>
-
-        <section class="panel profile-panel">
-            <h2>Datos del perito</h2>
-
-            <form class="profile-form">
-                <div class="form-grid">
-                    <div>
-                        <label class="form-label" for="nombre">Nombre</label>
-                        <input
-                                class="form-control"
-                                id="nombre"
-                                name="nombre"
-                                type="text"
-                                value="Lucía">
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="apellidos">Apellidos</label>
-                        <input
-                                class="form-control"
-                                id="apellidos"
-                                name="apellidos"
-                                type="text"
-                                value="Hernández López">
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="correo">
-                            Correo electrónico
-                        </label>
-                        <input
-                                class="form-control"
-                                id="correo"
-                                name="correo"
-                                type="email"
-                                value="lucia.hernandez@poderjudicial.gob.mx">
-                    </div>
-
-                    <div>
-                        <label class="form-label" for="telefonoEdad">
-                            Teléfono / Edad
-                        </label>
-                        <input
-                                class="form-control"
-                                id="telefonoEdad"
-                                name="telefonoEdad"
-                                type="text"
-                                value="777 234 5678 · 36 años">
-                    </div>
-                </div>
-
-                <div class="specialty-actions">
-                    <label class="specialty-option">
-                        <input type="checkbox" checked>
-                        <span>Familiar / Psicología</span>
-                    </label>
-
-                    <label class="specialty-option">
-                        <input type="checkbox" checked>
-                        <span>Civil / Psicología</span>
-                    </label>
-
-                    <button class="btn-sagp" type="button">Guardar cambios</button>
-                </div>
-            </form>
-        </section>
-
-        <section class="status-panel" aria-label="Estado del perito">
-            <label class="status-control">
-                <input type="checkbox" checked>
-                <span class="status-switch" aria-hidden="true"></span>
-                <span class="status-label">Activo</span>
-            </label>
-
-            <p class="status-description">
-                Al desactivar, la fecha de inicio de inactividad se registra automáticamente.
-            </p>
-        </section>
-
-        <section class="cases-section">
-            <h2>Casos / Peritajes históricos y activos</h2>
-
-            <div class="table-responsive cases-table-wrap">
-                <table class="table cases-table">
-                    <thead>
-                    <tr>
-                        <th scope="col">SOLICITUD / EXPEDIENTE</th>
-                        <th scope="col">JUZGADO</th>
-                        <th scope="col">ESTADO</th>
-                        <th scope="col">INICIO / TÉRMINO</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SOL-2026-0148 · EXP-391/2026</td>
-                        <td>Familiar · Cuernavaca</td>
-                        <td>
-                            <span class="case-status in-progress">En proceso</span>
-                        </td>
-                        <td>22 oct 2026 / Pendiente</td>
-                    </tr>
-                    <tr>
-                        <td>SOL-2026-0131 · EXP-320/2026</td>
-                        <td>Familiar · Jiutepec</td>
-                        <td>
-                            <span class="case-status completed">Terminado</span>
-                        </td>
-                        <td>16 oct 2026 / 20 oct 2026</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
 </div>
 </body>
 </html>
