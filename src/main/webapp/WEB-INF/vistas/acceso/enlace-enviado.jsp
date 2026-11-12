@@ -11,37 +11,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Revisa tu correo · Peritos Morelos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/assets/css/enlace-enviado.css" rel="stylesheet">
+    <title>Revisa tu correo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
-<body>
-<header class="barra-superior">
-    <img src="${pageContext.request.contextPath}/img/logo-morelos.jpeg" alt="Gobierno del Estado de Morelos">
-    <span class="text-secondary">Peritos Morelos · Recuperación de acceso</span>
-    <span class="ms-auto fw-semibold text-uppercase texto-sagp" style="font-size: .75rem;">Acceso seguro</span>
+<body class="fondo-crema" style="min-height: 100vh;">
+
+<header class="bg-white p-3 d-flex align-items-center gap-3">
+    <img src="${pageContext.request.contextPath}/img/logo.png" alt="Gobierno de Morelos" style="height: 40px; width: auto;">
+    <span>Peritos Morelos · Recuperación de acceso</span>
+    <span class="ms-auto texto-verde fw-bold text-uppercase" style="font-size: 0.75rem;">Acceso seguro</span>
 </header>
 
-<main class="d-flex flex-column align-items-center justify-content-center p-3" style="min-height: calc(100vh - 68px);">
+<main class="d-flex flex-column align-items-center justify-content-center p-3" style="min-height: calc(100vh - 72px);">
     <div class="w-100" style="max-width: 520px;">
-        <p class="crumb">Recuperación de contraseña</p>
-        <h1 class="titulo-vista">Revisa tu correo</h1>
-        <p class="subtitulo-vista">Confirmación de la operación</p>
+        <p class="texto-verde fw-bold text-uppercase mb-1" style="font-size: 0.75rem;">Recuperación de contraseña</p>
+        <h2 class="fw-bold">Revisa tu correo</h2>
+        <p class="texto-dorado">Confirmación de la operación</p>
 
-        <div class="card"><div class="card-body">
-            <span class="chip badge rounded-pill mb-3">Operación recibida</span>
-            <p class="fw-semibold mb-3" style="font-size: 1rem;">Si existe una cuenta asociada, recibirás un enlace para restablecer tu contraseña.</p>
-            <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-sagp" href="#">Volver al acceso</a>
-                <a class="btn btn-outline-sagp" href="#">Crear nueva contraseña</a>
+        <div class="card shadow border-0 rounded-3 bg-white">
+            <div class="card-body">
+                <span class="badge badge-proceso rounded-pill mb-3">Operación recibida</span>
+                <p class="fw-semibold mb-3">Si existe una cuenta asociada, recibirás un enlace para restablecer tu contraseña.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-primario" href="#">Volver al acceso</a>
+                    <a class="btn btn-secundario" href="#">Crear nueva contraseña</a>
+                </div>
             </div>
-        </div></div>
+        </div>
     </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
