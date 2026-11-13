@@ -178,7 +178,7 @@
             </section>
 
             <div class="mt-4 mb-4">
-                <a class="btn btn-primario" href="#">
+                <a class="btn btn-primario" href="${pageContext.request.contextPath}/perito/detalle-caso">
                     Abrir SOL-2026-0148
                 </a>
             </div>

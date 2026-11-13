@@ -103,3 +103,20 @@ body { color: #5D5E5F; }
     padding: 8px 12px;
     font-weight: normal;
 }
+
+/* Zona para arrastrar el PDF */
+.zona-pdf { border: 1px dashed #4A5D45; border-radius: 4px; background-color: #FAF9F6; padding: 1.5rem; }
+.zona-pdf.arrastrando { border-color: #B89758; background-color: #FDF3E1; }
+
+/* Alerta dorada  */
+.alerta-dorada { background-color: #FDF3E1; color: #B89758; border: 1px solid #B89758; border-radius: 8px; }
+
+/* Botón principal deshabilitado  */
+.btn.btn-primario:disabled { background-color: #4A5D45; color: #FFFFFF; opacity: .45; }
+
+/* Estilos que genera asignacion-automatica.js y que estilos.css no tiene */
+.winner td { background-color: #EDF1EB; }
+.texto-sagp { color: #4A5D45; }
+
+/* Botón principal deshabilitado (estilos.css no define este estado) */
+.btn.btn-primario:disabled { background-color: #4A5D45; color: #FFFFFF; opacity: .45; }
