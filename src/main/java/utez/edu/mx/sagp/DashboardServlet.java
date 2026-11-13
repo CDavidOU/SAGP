@@ -13,7 +13,7 @@ public class DashboardServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("/WEB-INF/vistas/dashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/vistas/admin/peritos/dashboard.jsp").forward(request, response);
 
     }
 }

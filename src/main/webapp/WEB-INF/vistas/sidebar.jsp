@@ -9,22 +9,22 @@
 
     <ul class="nav flex-column gap-2 mb-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'resumen' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}/dashboard" class="nav-link d-flex align-items-center ${param.seccionActiva == 'resumen' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-grid-fill me-3 fs-5"></i> Resumen
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'peritos' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}/admin/peritos" class="nav-link d-flex align-items-center ${param.seccionActiva == 'peritos' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-people me-3 fs-5"></i> Peritos
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'solicitudes' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}//admin/solicitudes/detalle-reasignacion " class="nav-link d-flex align-items-center ${param.seccionActiva == 'solicitudes' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-file-earmark-text me-3 fs-5"></i> Solicitudes
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'carga' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}/admin/carga-trabajo" class="nav-link d-flex align-items-center ${param.seccionActiva == 'carga' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-list-task me-3 fs-5"></i> Carga de trabajo
             </a>
         </li>
@@ -34,7 +34,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'branding' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}/tema" class="nav-link d-flex align-items-center ${param.seccionActiva == 'branding' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-palette me-3 fs-5"></i> Branding / Tema
             </a>
         </li>
@@ -49,6 +49,6 @@
             <span class="ms-2 texto-crema" style="font-size: 0.85rem; font-weight: 500;">Ana Martínez</span>
         </div>
 
-        <a href="#" class="btn btn-secundario w-100 mx-3 mb-3" style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">Cerrar sesión</a>
+        <a href="${pageContext.request.contextPath}/login" class="btn btn-secundario w-100 mx-3 mb-3" style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">Cerrar sesión</a>
     </div>
 </aside>

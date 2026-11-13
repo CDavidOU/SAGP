@@ -17,9 +17,11 @@
 <body class="bg-light" style="overflow-x: hidden;">
 <div class="container-fluid p-0 d-flex">
 
+    <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
     <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
         <jsp:param name="seccionActiva" value="peritos"/>
     </jsp:include>
+    </aside>
 
     <main class="fondo-crema" style="flex: 1;">
         <div class="p-3 bg-white row">

@@ -18,7 +18,7 @@
 <div class="container-fluid p-0 d-flex">
 
     <aside class="menu d-flex flex-column border-end"
-           style="width: 250px; height: 100vh; position: sticky; top: 0; background-color: var(--verde-tierra, #4A5D45);">
+           style="width: 250px; height: 100vh; position: sticky; top: 0; background-color: #4A5D45">
 
         <div class="m-2 text-center">
             <img src="${pageContext.request.contextPath}/assets/img/logo.png"
@@ -79,7 +79,7 @@
                 </span>
             </div>
 
-            <a href="#"
+            <a href="${pageContext.request.contextPath}/login"
                class="btn btn-secundario w-100 mx-3 mb-3"
                style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">
                 Cerrar sesión

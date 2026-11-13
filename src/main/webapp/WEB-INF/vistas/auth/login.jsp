@@ -12,7 +12,7 @@
           rel="stylesheet">
 
   <link
-          href="${pageContext.request.contextPath}/assets/css/auth.css"
+          href="${pageContext.request.contextPath}/assets/css/estilos.css"
           rel="stylesheet">
 </head>
 <body>
@@ -115,12 +115,11 @@
                       type="button"
                       aria-label="Mostrar contraseña"
                       data-toggle-password="contrasena">
-                ◉
               </button>
             </div>
           </div>
 
-          <button type="button" class="btn auth-submit-button w-100">
+          <button type="button" class="btn btn-primario w-100">
             Iniciar sesión
           </button>
         </form>
@@ -130,6 +129,16 @@
                 href="${pageContext.request.contextPath}/recuperar">
           Olvidé mi contraseña
         </a>
+        <div>
+          <a class="btn btn-secundario"
+             href="${pageContext.request.contextPath}/admin/peritos">
+            ADMINISTRADOR
+          </a>
+          <a class="btn btn-primario"
+             href="${pageContext.request.contextPath}/perito/asignaciones">
+            PERITO
+          </a>
+        </div>
 
         <p class="form-footer">
           Sistema de Gestión y Asignación de Peritos Judiciales

@@ -16,11 +16,14 @@
 
 <body class="bg-light" style="overflow-x: hidden;">
 <div class="container-fluid p-0 d-flex">
+    <!-- Izquierdo -->
+    <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
+        <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
+            <jsp:param name="seccionActiva" value="peritos"/>
+        </jsp:include>
+    </aside>
 
-    <jsp:include page="/WEB-INF/vistas/sidebar.jsp">
-        <jsp:param name="seccionActiva" value="peritos"/>
-    </jsp:include>
-
+    <!-- Derecho -->
     <main class="fondo-crema" style="flex: 1;">
         <div class="p-3 bg-white row">
             <div class="col-8">
@@ -62,10 +65,10 @@
                                 placeholder="Ej. Juan Carlos Pérez">
                     </div>
 
-                    <button class="btn btn-primario" type="button">
+                    <a href="${pageContext.request.contextPath}/admin/peritos/registrar" class="btn btn-primario">
                         <i class="bi bi-person-plus me-2" aria-hidden="true"></i>
                         Agregar nuevo perito
-                    </button>
+                    </a>
                 </div>
 
                 <div class="table-responsive">
@@ -81,7 +84,7 @@
                         <tbody>
                         <tr>
                             <td>PER-001</td>
-                            <td>Lucía Hernández López</td>
+                            <td><a href="${pageContext.request.contextPath}/admin/peritos/perfil">Lucía Hernández López</a> </td>
                             <td>Familiar / Psicología</td>
                             <td>
                                 <span class="badge badge-proceso rounded-pill">Activo</span>
