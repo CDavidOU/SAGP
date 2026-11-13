@@ -1,4 +1,4 @@
-package utez.edu.mx.sagp;
+package utez.edu.mx.sagp.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

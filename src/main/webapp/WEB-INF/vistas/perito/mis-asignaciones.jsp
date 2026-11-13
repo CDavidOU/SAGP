@@ -17,74 +17,11 @@
 <body class="bg-light" style="overflow-x: hidden;">
 <div class="container-fluid p-0 d-flex">
 
-    <aside class="menu d-flex flex-column border-end"
-           style="width: 250px; height: 100vh; position: sticky; top: 0; background-color: #4A5D45">
-
-        <div class="m-2 text-center">
-            <img src="${pageContext.request.contextPath}/assets/img/logo.png"
-                 alt="Gobierno del Estado de Morelos"
-                 style="max-width: 100%; height: auto;">
-        </div>
-
-        <p class="texto-dorado fw-bold px-3 mb-3"
-           style="font-size: 0.75rem; letter-spacing: 0.5px;">
-            PORTAL DEL PERITO
-        </p>
-
-        <ul class="nav flex-column gap-2 mb-auto">
-            <li class="nav-item">
-                <a href="${pageContext.request.contextPath}/perito/asignaciones"
-                   class="nav-link d-flex align-items-center rounded texto-crema menu-activo"
-                   aria-current="page">
-                    <i class="bi bi-file-earmark-text me-3 fs-5" aria-hidden="true"></i>
-                    Mis asignaciones
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#"
-                   class="nav-link d-flex align-items-center rounded texto-crema">
-                    <i class="bi bi-file-earmark-check me-3 fs-5" aria-hidden="true"></i>
-                    Dictámenes
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#"
-                   class="nav-link d-flex align-items-center rounded texto-crema">
-                    <i class="bi bi-person me-3 fs-5" aria-hidden="true"></i>
-                    Mi perfil
-                </a>
-            </li>
-        </ul>
-
-        <div class="mt-auto pt-3">
-            <p class="texto-dorado mx-3 mb-1" style="font-size: 0.85rem;">
-                Cobertura estatal
-            </p>
-
-            <p class="texto-crema mx-3 mb-4"
-               style="font-size: 0.75rem; line-height: 1.2;">
-                Todos los municipios<br>
-                de Morelos
-            </p>
-
-            <div class="d-flex align-items-center m-3">
-                <div class="rounded-circle d-flex justify-content-center align-items-center circulo-iniciales">
-                    LH
-                </div>
-                <span class="ms-2 texto-crema"
-                      style="font-size: 0.85rem; font-weight: 500;">
-                    Lucía Hernández
-                </span>
-            </div>
-
-            <a href="${pageContext.request.contextPath}/login"
-               class="btn btn-secundario w-100 mx-3 mb-3"
-               style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">
-                Cerrar sesión
-            </a>
-        </div>
+    <!-- Izquierdo -->
+    <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
+        <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
+            <jsp:param name="seccionActiva" value="asignaciones" />
+        </jsp:include>
     </aside>
 
     <main class="fondo-crema flex-grow-1">

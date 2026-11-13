@@ -1,4 +1,4 @@
-package utez.edu.mx.sagp;
+package utez.edu.mx.sagp.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,12 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "AsignacionManual", value = "/asignacionManual")
-public class AsignacionManualServlet extends HttpServlet {
+@WebServlet(name="Tema",value="/tema")
+public class TemaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        request.getRequestDispatcher("/WEB-INF/vistas/AsignacionManual.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/vistas/tema.jsp").forward(request, response);
 
     }
 }

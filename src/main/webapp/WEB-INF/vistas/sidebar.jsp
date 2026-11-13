@@ -20,7 +20,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="${pageContext.request.contextPath}//admin/solicitudes/detalle-reasignacion " class="nav-link d-flex align-items-center ${param.seccionActiva == 'solicitudes' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}/admin/solicitudes/detalle-reasignacion" class="nav-link d-flex align-items-center ${param.seccionActiva == 'solicitudes' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-file-earmark-text me-3 fs-5"></i> Solicitudes
             </a>
         </li>

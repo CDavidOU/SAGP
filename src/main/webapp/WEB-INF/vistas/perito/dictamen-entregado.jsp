@@ -66,7 +66,7 @@
         </div>
 
         <div class="px-4 pb-4">
-            <button class="btn btn-secundario" type="button">Volver a mis casos</button>
+            <a href="${pageContext.request.contextPath}/perito/asignaciones" class="btn btn-secundario" type="button">Volver a mis casos</a>
         </div>
     </main>
 </div>
