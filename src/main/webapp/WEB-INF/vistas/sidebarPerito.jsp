@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="" class="nav-link d-flex align-items-center ${param.seccionActiva == 'dictamenes' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'dictamenes' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-file-earmark-text me-3 fs-5"></i> Dictámenes
             </a>
         </li>
@@ -34,7 +34,6 @@
             <div class="rounded-circle d-flex justify-content-center align-items-center circulo-iniciales">LH</div>
             <span class="ms-2 texto-crema" style="font-size: 0.85rem; font-weight: 500;">Lucía Hernández</span>
         </div>
-
         <a href="${pageContext.request.contextPath}/login" class="btn btn-secundario w-100 mx-3 mb-3" style="width: 90% !important; border-radius: 8px; font-size: 0.9rem;">Cerrar sesión</a>
     </div>
 </aside>
