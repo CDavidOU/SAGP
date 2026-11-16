@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<aside class="sidebar-verde d-flex flex-column">
+<aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0; background-color: #4A5D45">
 
     <div class="m-2 text-center">
-        <img src="${pageContext.request.contextPath}/img/logo.png" alt="Gobierno de Morelos" style="max-width: 100%; height: auto;">
+        <img src="${pageContext.request.contextPath}/img/Logo.png" alt="Gobierno de Morelos" style="max-width: 100%; height: auto;">
     </div>
 
     <p class="texto-dorado fw-bold px-3 mb-3" style="font-size: 0.75rem; letter-spacing: 0.5px;">ADMINISTRACIÓN</p>
