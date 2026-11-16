@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperación de Acceso | SAGP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body class="fondo-crema min-vh-100 d-flex flex-column">
 
@@ -22,18 +23,18 @@
         <h2 class="fw-bold text-dark mt-2 mb-1">Crear nueva contraseña</h2>
         <p class="texto-muted mb-4">Vista de ejemplo al abrir un enlace de recuperación válido.</p>
 
-        <div class="card-custom p-4">
+        <div class="card-custom bg-white border rounded-3 p-4">
             <h5 class="fw-bold text-dark mb-3">Nueva contraseña</h5>
 
-            <form>
+            <form action="${pageContext.request.contextPath}/nueva-contrasena" method="post">
                 <div class="mb-3">
-                    <label class="form-label text-dark" style="font-size: 0.85rem;">Contraseña nueva</label>
-                    <input type="password" class="form-class form-control rounded-2 py-2" value="............">
+                    <label for="nuevaContrasena" class="form-label text-dark" style="font-size: 0.85rem;">Contraseña nueva</label>
+                    <input type="password" id="nuevaContrasena" name="nuevaContrasena" class="form-control rounded-2 py-2" placeholder="••••••••••••" required>
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label text-dark" style="font-size: 0.85rem;">Confirmar contraseña</label>
-                    <input type="password" class="form-control rounded-2 py-2" value="............">
+                    <label for="confirmarContrasena" class="form-label text-dark" style="font-size: 0.85rem;">Confirmar contraseña</label>
+                    <input type="password" id="confirmarContrasena" name="confirmarContrasena" class="form-control rounded-2 py-2" placeholder="••••••••••••" required>
                 </div>
 
                 <button type="submit" class="btn btn-primario px-4 py-2 rounded-2">Guardar contraseña</button>
@@ -41,5 +42,6 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
