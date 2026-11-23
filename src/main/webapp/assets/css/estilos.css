@@ -1,52 +1,81 @@
 /* =========================================
+   COLORES PRIMARIO Y SECUNDARIO
+========================================= */
+:root {
+    --primario: #4A5D45;
+    --secundario: #B89758;
+    --fondo-primario: #FFFFFF;
+    --fondo-secundario: #FAF9F6;
+    --texto: #64746C;
+    --titulo: #4A5D45;
+    --muted: #5D5E5F;
+}
+
+/* =========================================
    PALETA DE COLORES Y TEXTOS
 ========================================= */
-body { color: #5D5E5F; }
-.texto { color: #64746C !important;  }
-.fondo-crema { background-color: #FAF9F6 !important; }
-.texto-verde { color: #4A5D45 !important; }
-.texto-muted { color: #5D5E5F !important; opacity: 0.8; }
-.texto-dorado{ color: #B89758 !important; }
-.texto-crema{ color: #FAF9F6 !important; }
+body { color: var(--muted); }
+.texto { color: var(--texto) !important; }
+.fondo-crema { background-color: var(--fondo-secundario) !important; }
+.texto-verde { color: var(--primario) !important; }
+.texto-muted { color: var(--muted) !important; opacity: 0.8; }
+.texto-dorado { color: var(--secundario) !important; }
+.texto-crema { color: var(--fondo-secundario) !important; }
+.texto-sagp { color: var(--primario); }
 
 /* =========================================
    ENLACES DEL MENÚ LATERAL (Fondo Verde)
 ========================================= */
 .enlace-menu {
-    color: #FAF9F6 !important; /* Color Crema */
+    color: var(--fondo-secundario) !important;
     opacity: 0.75;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 .enlace-menu:hover {
-    color: #B89758 !important; /* Cambia a Dorado */
+    color: var(--secundario) !important;
     opacity: 1;
 }
 
 /* =========================================
-   BOTONES (Transición a Dorado #B89758)
+   BOTONES (Transición a Dorado)
 ========================================= */
-.btn-primario {
-    background-color: #4A5D45;
-    color: #FFFFFF;
+.btn-primario,
+.btn-primario-solido {
+    background-color: var(--primario);
+    color: var(--fondo-primario);
     border: none;
     transition: all 0.3s ease;
 }
+
 .btn-primario:hover {
-    background-color: #B89758;
-    color: #FFFFFF;
+    background-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+.btn.btn-primario:disabled {
+    background-color: var(--primario);
+    color: var(--fondo-primario);
+    opacity: 0.45;
 }
 
 .btn-secundario {
-    background-color: #FFFFFF;
-    color: #5D5E5F;
-    border: 1px solid #5D5E5F;
+    background-color: var(--fondo-primario);
+    color: var(--muted);
+    border: 1px solid var(--muted);
     transition: all 0.3s ease;
 }
+
+.btn-secundario-solido {
+    background-color: var(--secundario);
+    border-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
 .btn-secundario:hover {
-    background-color: #B89758;
-    border-color: #B89758;
-    color: #FFFFFF;
+    background-color: var(--secundario);
+    border-color: var(--secundario);
+    color: var(--fondo-primario);
 }
 
 /* =========================================
@@ -54,69 +83,279 @@ body { color: #5D5E5F; }
 ========================================= */
 /* Menú activo en el sidebar */
 .menu {
-    background-color: #FFFFFF;
-    color: #4A5D45;
+    background-color: var(--fondo-primario);
+    color: var(--primario) !important;
     font-weight: bold;
-    border-left: 4px solid #4A5D45;
+    border-left: 4px solid var(--primario);
 }
 
 .menu-activo {
-    background-color:#E8F3ED;
-    color: #4A5D45 !important;
-    border: 1px solid #4A5D45;
+    background-color: #E8F3ED;
+    color: var(--primario) !important;
+    border: 1px solid var(--primario);
+    border-left: 4px solid var(--primario);
     border-radius: 4px;
     font-weight: bold;
-    border-left: 4px solid #4A5D45;
 }
 
 /* Círculo de las iniciales (AM) */
 .circulo-iniciales {
     width: 35px;
     height: 35px;
-    background-color: #FFFFFF;
-    color: #4A5D45;
+    background-color: var(--fondo-primario);
+    color: var(--primario);
     font-size: 0.8rem;
     font-weight: bold;
-    border: 1px solid #4A5D45;
+    border: 1px solid var(--primario);
 }
 
-/* Alerta de solicitudes pendientes */
+/* Alertas */
 .alerta-verde {
     background-color: #E8F3ED;
-    color: #4A5D45;
-    border: 1px solid #4A5D45;
+    color: var(--primario);
+    border: 1px solid var(--primario);
+    border-radius: 8px;
+}
+
+.alerta-dorada {
+    background-color: #FDF3E1;
+    color: var(--secundario);
+    border: 1px solid var(--secundario);
     border-radius: 8px;
 }
 
 /* Pastillas de estado (Badges) */
 .badge-pendiente {
     background-color: #FDF3E1;
-    color: #B89758;
-    border: 1px solid #B89758;
+    color: var(--secundario);
+    border: 1px solid var(--secundario);
     padding: 8px 12px;
     font-weight: normal;
 }
+
 .badge-proceso {
     background-color: #EAF3EF;
-    color: #4A5D45;
-    border: 1px solid #4A5D45;
+    color: var(--primario);
+    border: 1px solid var(--primario);
     padding: 8px 12px;
     font-weight: normal;
 }
 
 /* Zona para arrastrar el PDF */
-.zona-pdf { border: 1px dashed #4A5D45; border-radius: 4px; background-color: #FAF9F6; padding: 1.5rem; }
-.zona-pdf.arrastrando { border-color: #B89758; background-color: #FDF3E1; }
+.zona-pdf {
+    border: 1px dashed var(--primario);
+    border-radius: 4px;
+    background-color: var(--fondo-secundario);
+    padding: 1.5rem;
+}
 
-/* Alerta dorada  */
-.alerta-dorada { background-color: #FDF3E1; color: #B89758; border: 1px solid #B89758; border-radius: 8px; }
+.zona-pdf.arrastrando {
+    border-color: var(--secundario);
+    background-color: #FDF3E1;
+}
 
-/* Botón principal deshabilitado  */
-.btn.btn-primario:disabled { background-color: #4A5D45; color: #FFFFFF; opacity: .45; }
+/* Estilos generados por asignacion-automatica.js */
+.winner td {
+    background-color: #EDF1EB;
+}
 
-/* Estilos que genera asignacion-automatica.js y que estilos.css no tiene */
-.winner td { background-color: #EDF1EB; }
-.texto-sagp { color: #4A5D45; }
+/* =========================================
+   VISTAS DE AUTENTICACIÓN (Login, Recuperar, Bloqueado)
+========================================= */
+.auth-brand-panel {
+    background-color: #384934; /* Verde oscuro institucional del panel izquierdo */
+    color: var(--fondo-primario);
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-/* Botón principal deshabilitado (estilos.css no define este estado) */
-.btn.btn-primario:disabled { background-color: #4A5D45; color: #FFFFFF; opacity: .45; }
+.brand-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.brand-emblem {
+    width: 44px;
+    height: auto;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--fondo-primario);
+    margin: 0;
+}
+
+.brand-subtitle {
+    font-size: 0.68rem;
+    letter-spacing: 0.8px;
+    color: var(--secundario);
+    margin: 0;
+}
+
+.brand-message {
+    margin: auto 0;
+    max-width: 430px;
+}
+
+.brand-message h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.3rem;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--fondo-primario);
+    margin-bottom: 1.25rem;
+}
+
+.brand-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2.5rem;
+}
+
+.brand-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
+
+.benefit-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--secundario);
+    padding-top: 2px;
+}
+
+.brand-benefit h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--fondo-primario);
+    margin: 0 0 0.2rem 0;
+}
+
+.brand-benefit p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Panel Derecho (Formulario) */
+.auth-form-panel {
+    background-color: var(--fondo-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+.auth-form-content {
+    width: 100%;
+    max-width: 420px;
+}
+
+.form-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primario);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.form-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1E2421;
+    margin-bottom: 0.5rem;
+}
+
+.form-description {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+}
+
+.auth-form-content .form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #2C3330;
+}
+
+.auth-form-content .form-control {
+    background-color: var(--fondo-primario);
+    border: 1px solid #DCDAD3;
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+.auth-form-content .form-control:focus {
+    border-color: var(--primario);
+    box-shadow: 0 0 0 0.2rem rgba(74, 93, 69, 0.15);
+}
+
+/* Campo de contraseña con botón interno */
+.password-field {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    padding: 4px 8px;
+}
+
+/* Botón principal de las vistas Auth */
+.auth-submit-button {
+    background-color: var(--primario);
+    color: var(--fondo-primario);
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.auth-submit-button:hover {
+    background-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+.forgot-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+    color: #2C3330;
+    background-color: var(--fondo-primario);
+    border: 1px solid #DCDAD3;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.forgot-link:hover {
+    border-color: var(--primario);
+    color: var(--primario);
+}
+
+.form-footer {
+    margin-top: 1.75rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    opacity: 0.75;
+}

@@ -11,9 +11,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
-  <link
-          href="${pageContext.request.contextPath}/assets/css/auth.css"
-          rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/assets/css/estilos.css" rel="stylesheet">
 </head>
 <body>
 <main class="auth-page container-fluid p-0">
@@ -24,7 +22,7 @@
         <div class="brand-mark">
           <img
                   class="brand-emblem"
-                  src="${pageContext.request.contextPath}/assets/img/morelos-emblema.jpg"
+                  src="${pageContext.request.contextPath}/assets/img/logo.png"
                   alt="Emblema de Morelos">
         </div>
 

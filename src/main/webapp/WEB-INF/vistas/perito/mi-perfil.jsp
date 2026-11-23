@@ -12,9 +12,11 @@
 <body class="bg-light" style="overflow-x: hidden;">
 
 <div class="container-fluid p-0 d-flex">
-    <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
-        <jsp:param name="seccionActiva" value="perfil" />
-    </jsp:include>
+    <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
+        <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
+            <jsp:param name="seccionActiva" value="perfil" />
+        </jsp:include>
+    </aside>
 
     <main class="fondo-crema" style="flex: 1;">
 
@@ -54,7 +56,7 @@
                                 <div class="invalid-feedback">Ingrese un teléfono válido (solo números, espacios, + y guiones).</div>
                             </div>
                         </div>
-                        <button class="btn btn-primario mt-3" type="submit">Guardar datos de contacto</button>
+                        <a href="${pageContext.request.contextPath}/actualizadoCorrectamente" class="btn btn-primario mt-3" type="submit">Guardar datos de contacto</a>
                     </form>
                 </div>
             </div>
@@ -66,46 +68,11 @@
                     <h5 class="fw-bold mb-1">Cambiar contraseña</h5>
                     <p class="texto">Actualice su contraseña de acceso al sistema.</p>
                     <div class="alert alerta-verde py-2 d-none" id="okPassword" role="status">Contraseña actualizada.</div>
-                    <button class="btn btn-secundario" type="button" data-bs-toggle="modal" data-bs-target="#modalPassword">Cambiar contraseña</button>
+                    <a href="${pageContext.request.contextPath}/cambiarcontrasena" class="btn btn-secundario" type="button">Cambiar contraseña</a>
                 </div>
             </div>
         </div>
     </main>
-</div>
-
-<!-- Ventana para cambiar la contraseña (añadida; no aparece en el Figma) -->
-<div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="tituloModalPassword" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0 rounded-3">
-            <form id="formPassword" novalidate>
-                <div class="modal-header border-0">
-                    <h5 class="fw-bold mb-0" id="tituloModalPassword">Cambiar contraseña</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label texto small" for="passActual">Contraseña actual</label>
-                        <input class="form-control" type="password" id="passActual" autocomplete="current-password" required>
-                        <div class="invalid-feedback">Ingrese su contraseña actual.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label texto small" for="passNueva">Nueva contraseña</label>
-                        <input class="form-control" type="password" id="passNueva" autocomplete="new-password" required>
-                        <div class="invalid-feedback">Ingrese la nueva contraseña.</div>
-                    </div>
-                    <div class="mb-0">
-                        <label class="form-label texto small" for="passConfirmar">Confirmar nueva contraseña</label>
-                        <input class="form-control" type="password" id="passConfirmar" autocomplete="new-password" required>
-                        <div class="invalid-feedback">Las contraseñas no coinciden.</div>
-                    </div>
-                </div>
-                <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-secundario" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primario">Guardar contraseña</button>
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 </body>
 </html>

@@ -11,9 +11,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
-  <link
-          href="${pageContext.request.contextPath}/assets/css/estilos.css"
-          rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/assets/css/estilos.css" rel="stylesheet">
 </head>
 <body>
 <main class="auth-page container-fluid p-0">
@@ -24,7 +22,7 @@
         <div class="brand-mark">
           <img
                   class="brand-emblem"
-                  src="${pageContext.request.contextPath}/assets/img/morelos-emblema.jpg"
+                  src="${pageContext.request.contextPath}/assets/img/logo.png"
                   alt="Emblema de Morelos">
         </div>
 
@@ -111,7 +109,7 @@
                       autocomplete="current-password">
 
               <button
-                      class="password-toggle"
+                      class="password-toggle btn btn-secundario"
                       type="button"
                       aria-label="Mostrar contraseña"
                       data-toggle-password="contrasena">
@@ -123,22 +121,18 @@
             Iniciar sesión
           </button>
         </form>
-
-        <a
-                class="forgot-link"
-                href="${pageContext.request.contextPath}/recuperar">
-          Olvidé mi contraseña
-        </a>
-        <div>
-          <a class="btn btn-secundario"
-             href="${pageContext.request.contextPath}/admin/peritos">
-            ADMINISTRADOR
+        <div class="d-grid gap-2 mt-3">
+          <a class="btn btn-primario py-2" href="${pageContext.request.contextPath}/admin/peritos">
+            Ingresar como administrador
           </a>
-          <a class="btn btn-primario"
-             href="${pageContext.request.contextPath}/perito/asignaciones">
-            PERITO
+          <a class="btn btn-secundario py-2" href="${pageContext.request.contextPath}/perito/asignaciones">
+            Ingresar como perito
           </a>
         </div>
+
+        <a class="forgot-link" href="${pageContext.request.contextPath}/recuperar">
+          Olvidé mi contraseña
+        </a>
 
         <p class="form-footer">
           Sistema de Gestión y Asignación de Peritos Judiciales

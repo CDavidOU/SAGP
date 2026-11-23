@@ -80,6 +80,13 @@
             </div>
         </div>
 
+        <div class="px-4 mb-4">
+            <div class="alerta-verde p-3" role="status">
+                <p class="fw-bold mb-1">Edición habilitada por el administrador</p>
+                <p class="mb-0">Puedes cargar un PDF corregido. La versión anterior se conserva en el historial.</p>
+            </div>
+        </div>
+
         <div class="px-4 pb-4">
             <a href="${pageContext.request.contextPath}/perito/asignaciones" class="btn btn-secundario">Volver a mis casos</a>
         </div>
