@@ -1,0 +1,147 @@
+/* =========================================
+   COLORES OFICIALES (GUÍA DE IDENTIDAD)
+========================================= */
+:root {
+    --primario: #4A5D45;         /* Verde Tierra */
+    --secundario: #B89758;       /* Dorado */
+    --fondo-primario: #FFFFFF;   /* Blanco Puro */
+    --fondo-secundario: #F1EFE7; /* Fondo Crema */
+    --texto: #333333;            /* Gris Oscuro */
+    --titulo: #4A5D45;           /* Verde Tierra */
+    --muted: #5D5E5F;
+}
+
+/* =========================================
+   PALETA DE COLORES Y TEXTOS
+========================================= */
+body {
+    color: var(--texto);
+    background-color: var(--fondo-secundario);
+}
+
+.texto { color: var(--texto) !important; }
+.fondo-crema { background-color: var(--fondo-secundario) !important; }
+.texto-crema { color: var(--fondo-secundario) !important; }
+.texto-verde { color: var(--primario) !important; }
+.texto-muted { color: var(--muted) !important; }
+.texto-dorado { color: var(--secundario) !important; }
+
+/* =========================================
+   BOTONES (Transición a Dorado)
+========================================= */
+.btn-primario, .btn-primario-solido {
+    background-color: var(--primario);
+    color: var(--fondo-primario);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+    background-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+.btn-secundario-solido {
+    background-color: var(--secundario);
+    border-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+.btn-secundario {
+    background-color: var(--fondo-primario);
+    color: var(--texto);
+    border: 1px solid #CCCCCC;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: var(--secundario);
+    border-color: var(--secundario);
+    color: var(--fondo-primario);
+}
+
+/* =========================================
+   MENÚ LATERAL (SIDEBAR)
+========================================= */
+.sidebar-verde {
+    background-color: var(--primario);
+    width: 250px;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+/* Enlaces inactivos del sidebar */
+.enlace-menu {
+    color: var(--fondo-secundario) !important;
+    font-weight: 500;
+    padding: 10px 16px;
+    transition: all 0.2s ease;
+}
+
+.enlace-menu:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--fondo-primario) !important;
+}
+
+/* Enlace activo del sidebar (como en la imagen) */
+.menu-activo {
+    background-color: var(--fondo-primario) !important;
+    color: var(--primario) !important;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-left: 4px solid var(--secundario);
+}
+
+/* Círculo de las iniciales (AM) */
+.circulo-iniciales {
+    width: 35px;
+    height: 35px;
+    background-color: var(--fondo-primario);
+    color: var(--primario);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   TARJETAS, ALERTAS Y TABLAS
+========================================= */
+.card-custom {
+    background-color: var(--fondo-primario);
+    border: 1px solid #E2E0D8;
+    border-radius: 8px;
+}
+
+.alerta-verde, .alerta-info {
+    background-color: #E8EFEA;
+    color: var(--primario);
+    border: 1px solid #B9C8B6;
+    border-radius: 8px;
+}
+
+.table-custom thead th {
+    background-color: var(--fondo-secundario);
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #E2E0D8;
+}
+
+/* Pastillas de estado (Badges) */
+.badge-pendiente {
+    background-color: #FDF3E1;
+    color: var(--secundario);
+    border: 1px solid var(--secundario);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.badge-proceso {
+    background-color: #EAF3EF;
+    color: var(--primario);
+    border: 1px solid var(--primario);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+}
