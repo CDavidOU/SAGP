@@ -31,9 +31,9 @@ public class DictamenService {
     public static final long TAMANO_MAXIMO = 20L * 1024 * 1024;
     private static final int MAX_OBSERVACIONES = 500;
 
-    /** Carpeta donde se guardan los PDF: <carpeta de usuario>/sagp/dictamenes*/
+    /** Carpeta donde se guardan los PDF: <carpeta de usuario>/sagp-archivos/dictamenes*/
     private static final Path CARPETA_DICTAMENES =
-            Paths.get(System.getProperty("user.home"), "sagp", "dictamenes");
+            Paths.get(System.getProperty("user.home"), "sagp-archivos", "dictamenes");
 
     private final DictamenDao dictamenDao = new DictamenDao();
     private final MisAsignacionesDao asignacionesDao = new MisAsignacionesDao();
