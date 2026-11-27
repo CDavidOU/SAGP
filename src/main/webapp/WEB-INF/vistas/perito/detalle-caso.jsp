@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,9 +15,9 @@
 <div class="container-fluid p-0 d-flex">
     <!-- Izquierdo -->
     <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
-    <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
-        <jsp:param name="seccionActiva" value="asignaciones" />
-    </jsp:include>
+        <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
+            <jsp:param name="seccionActiva" value="asignaciones" />
+        </jsp:include>
     </aside>
 
     <main class="fondo-crema" style="flex: 1;">
@@ -32,8 +33,8 @@
 
         <div class="px-4 my-4">
             <p class="texto-verde fw-bold text-uppercase mb-1" style="font-size: 0.75rem;">Perito / Morelos</p>
-            <h2 class="fw-bold">Detalle del caso · SOL-2026-0148</h2>
-            <p class="texto-dorado">Expediente EXP-391/2026 · Asignación de Lucía Hernández López</p>
+            <h2 class="fw-bold">Detalle del caso · <c:out value="${caso.folio}"/></h2>
+            <p class="texto-dorado">Expediente <c:out value="${caso.numeroExpediente}"/> · Asignación de <c:out value="${perfil.nombreCompleto}"/></p>
         </div>
 
         <div class="px-4 mb-4">
@@ -43,11 +44,15 @@
                         <div class="card-body">
                             <h5 class="fw-bold mb-3">Información de la solicitud</h5>
                             <p class="texto small mb-0">Juzgado</p>
-                            <p class="fw-semibold">Juzgado Familiar de Cuernavaca</p>
+                            <p class="fw-semibold"><c:out value="${caso.juzgadoOrigen}"/></p>
                             <p class="texto small mb-0">Materia / Especialidad</p>
-                            <p class="fw-semibold">Familiar / Psicología</p>
+                            <p class="fw-semibold"><c:out value="${caso.materia}"/> / <c:out value="${caso.especialidad}"/></p>
+                            <p class="texto small mb-0">Descripción del caso</p>
+                            <p class="fw-semibold"><c:out value="${caso.descripcionCaso}"/></p>
                             <p class="texto small mb-0">Fecha y hora de inicio</p>
-                            <p class="fw-semibold">22 oct 2026 · 09:42 h</p>
+                            <p class="fw-semibold">${caso.fechaAsignacionTexto}</p>
+                            <p class="texto small mb-0">Fecha límite</p>
+                            <p class="fw-semibold">${caso.fechaLimiteTexto}</p>
                             <p class="texto small mb-0">Fecha y hora de término</p>
                             <p class="fw-semibold mb-0">Pendiente de finalización</p>
                         </div>
@@ -57,16 +62,23 @@
                     <div class="card shadow border-0 rounded-3 h-100 bg-white">
                         <div class="card-body">
                             <h5 class="fw-bold mb-3">Dictamen final</h5>
-                            <div class="zona-pdf mb-3" id="zonaPdf">
-                                <p class="fw-bold fs-5 mb-2">Arrastre el dictamen en PDF</p>
-                                <p class="texto">Puede contener imágenes y anexos embebidos.</p>
-                                <input type="file" id="archivoPdf" accept="application/pdf" hidden>
-                                <button class="btn btn-secundario" type="button" id="btnSeleccionar">Seleccionar archivo PDF</button>
-                                <p class="fw-semibold mt-2 mb-0" id="nombreArchivo"></p>
-                            </div>
-                            <div class="text-danger mb-2 d-none" id="errorPdf" role="alert"></div>
-                            <button class="btn btn-primario mb-3" type="button" id="btnTerminar" disabled>Marcar Peritaje como Terminado</button>
-                            <p class="texto mb-0" id="ayuda">Seleccione y cargue un PDF para habilitar este botón.</p>
+                            <form method="post" action="${pageContext.request.contextPath}/perito/detalle-caso"
+                                  enctype="multipart/form-data" id="formDictamen">
+                                <input type="hidden" name="idSolicitud" value="${caso.idSolicitud}">
+                                <div class="zona-pdf mb-3" id="zonaPdf">
+                                    <p class="fw-bold fs-5 mb-2">Arrastre el dictamen en PDF</p>
+                                    <p class="texto">Puede contener imágenes y anexos embebidos. Máximo 20 MB.</p>
+                                    <input type="file" id="archivoPdf" name="archivoPdf" accept="application/pdf" hidden>
+                                    <button class="btn btn-secundario" type="button" id="btnSeleccionar">Seleccionar archivo PDF</button>
+                                    <p class="fw-semibold mt-2 mb-0" id="nombreArchivo"></p>
+                                </div>
+                                <label class="form-label texto small" for="observaciones">Observaciones (opcional)</label>
+                                <textarea class="form-control mb-3" id="observaciones" name="observaciones"
+                                          rows="2" maxlength="500"><c:out value="${observaciones}"/></textarea>
+                                <div class="text-danger mb-2 ${empty error ? 'd-none' : ''}" id="errorPdf" role="alert"><c:out value="${error}"/></div>
+                                <button class="btn btn-primario mb-3" type="submit" id="btnTerminar" disabled>Marcar Peritaje como Terminado</button>
+                                <p class="texto mb-0" id="ayuda">Seleccione y cargue un PDF para habilitar este botón.</p>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -80,12 +92,15 @@
             </div>
         </div>
 
+        <%-- Aviso "Edición habilitada por el administrador": se mostrará cuando exista
+             la función de corrección autorizada (módulo del administrador).
         <div class="px-4 mb-4">
             <div class="alerta-verde p-3" role="status">
                 <p class="fw-bold mb-1">Edición habilitada por el administrador</p>
                 <p class="mb-0">Puedes cargar un PDF corregido. La versión anterior se conserva en el historial.</p>
             </div>
         </div>
+        --%>
 
         <div class="px-4 pb-4">
             <a href="${pageContext.request.contextPath}/perito/asignaciones" class="btn btn-secundario">Volver a mis casos</a>

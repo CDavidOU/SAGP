@@ -12,13 +12,23 @@ function reiniciar() {
 }
 
 const esPdf = a => a.type === "application/pdf" || a.name.toLowerCase().endsWith(".pdf");
+const MAX_BYTES = 20 * 1024 * 1024;
 
 function elegir(archivo) {
     error.classList.add("d-none");
-    if (!archivo) { reiniciar(); return; }            // canceló el diálogo
+
+    if (!archivo) { reiniciar(); //cancelamos el dialogo
+        return;
+    }
     if (!esPdf(archivo)) {
         reiniciar();
         error.textContent = "Solo se permiten archivos PDF.";
+        error.classList.remove("d-none");
+        return;
+    }
+    if (archivo.size > MAX_BYTES) {
+        reiniciar();
+        error.textContent = "El PDF supera el tamaño máximo de 20 MB.";
         error.classList.remove("d-none");
         return;
     }
@@ -45,11 +55,10 @@ zona.addEventListener("drop", e => {
     }
 });
 
-// guarda los datos como simulacion
-btnTerminar.addEventListener("click", () => {
-    if (!actual) return;
-    sessionStorage.setItem("dictamenNombre", actual.name);
-    sessionStorage.setItem("dictamenTermino",
-        new Date().toLocaleString("es-MX", { dateStyle: "medium", timeStyle: "medium" }));
-    window.location.href = "dictamen-entregado";   // mismo rol (/perito/): resuelve a /perito/dictamen-entregado
+// El botón ahora es type="submit": el formulario envía el PDF al servidor
+// (DetalleCasoServlet#doPost). Aquí solo evitamos el doble envío.
+document.getElementById("formDictamen").addEventListener("submit", e => {
+    if (!actual) { e.preventDefault(); return; }
+    btnTerminar.disabled = true;
+    btnTerminar.textContent = "Enviando dictamen...";
 });

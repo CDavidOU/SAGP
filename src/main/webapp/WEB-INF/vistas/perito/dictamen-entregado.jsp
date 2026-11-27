@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,9 +15,9 @@
 <div class="container-fluid p-0 d-flex">
     <!-- Izquierdo -->
     <aside class="menu d-flex flex-column border-end" style="width:250px; height: 100vh; position: sticky; top: 0;">
-    <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
-        <jsp:param name="seccionActiva" value="dictamenes" />
-    </jsp:include>
+        <jsp:include page="/WEB-INF/vistas/sidebarPerito.jsp">
+            <jsp:param name="seccionActiva" value="dictamenes" />
+        </jsp:include>
     </aside>
 
     <main class="fondo-crema" style="flex: 1;">
@@ -33,7 +34,7 @@
         <div class="px-4 my-4">
             <p class="texto-verde fw-bold text-uppercase mb-1" style="font-size: 0.75rem;">Perito / Morelos</p>
             <h2 class="fw-bold">Peritaje terminado</h2>
-            <p class="texto-dorado">SOL-2026-0148 · Dictamen final recibido.</p>
+            <p class="texto-dorado"><c:out value="${caso.folio}"/> · Dictamen final recibido.</p>
         </div>
 
         <div class="px-4 mb-4">
@@ -46,31 +47,33 @@
         <div class="px-4 mb-4">
             <div class="card shadow border-0 rounded-3 bg-white">
                 <div class="card-body">
-                    <span class="badge badge-proceso rounded-pill mb-3">Entregado</span>
-                    <h5 class="fw-bold mb-3" id="nombreDictamen">Dictamen_SOL-2026-0148.pdf</h5>
+                    <span class="badge badge-proceso rounded-pill mb-3"><c:out value="${dictamen.estadoRevision}"/></span>
+                    <h5 class="fw-bold mb-3" id="nombreDictamen"><c:out value="${dictamen.nombreArchivo}"/></h5>
                     <p class="texto small mb-0">Inicio</p>
-                    <p class="fw-semibold">22 oct 2026 · 09:42 h</p>
+                    <p class="fw-semibold">${caso.fechaAsignacionTexto}</p>
                     <p class="texto small mb-0">Término</p>
-                    <p class="fw-semibold" id="terminoDictamen">29 oct 2026 · 20:25:18 h</p>
+                    <p class="fw-semibold" id="terminoDictamen">${dictamen.fechaEntregaTexto}</p>
+                    <c:if test="${not empty dictamen.observacionesPerito}">
+                        <p class="texto small mb-0">Observaciones</p>
+                        <p class="fw-semibold"><c:out value="${dictamen.observacionesPerito}"/></p>
+                    </c:if>
                     <p class="texto">Registrado al marcar el peritaje como terminado.</p>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-secundario" type="button" id="btnVerDictamen">Ver dictamen</button>
+                        <a class="btn btn-secundario" id="btnVerDictamen" href="${pageContext.request.contextPath}/vista-dictamen?id=${dictamen.idDictamen}">Ver dictamen</a>
                         <span title="Solo el administrador puede habilitar una corrección de la entrega">
                             <button class="btn btn-primario" type="button" disabled>Reemplazar PDF</button>
                         </span>
                     </div>
-                    <div class="alert alerta-verde mt-3 mb-0 d-none" id="avisoVer" role="status"></div>
                     <p class="texto mt-3 mb-0">Solo el administrador puede habilitar una corrección de la entrega.</p>
                 </div>
             </div>
         </div>
 
         <div class="px-4 pb-4">
-            <a href="${pageContext.request.contextPath}/perito/asignaciones" class="btn btn-secundario" type="button">Volver a mis casos</a>
+            <a href="${pageContext.request.contextPath}/perito/asignaciones" class="btn btn-secundario">Volver a mis casos</a>
         </div>
     </main>
 </div>
 
-<script src="${pageContext.request.contextPath}/assets/js/dictamen-entregado.js"></script>
 </body>
 </html>

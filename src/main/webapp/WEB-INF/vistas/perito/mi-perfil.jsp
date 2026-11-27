@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,25 +39,29 @@
         <div class="px-4 mb-4">
             <div class="card shadow border-0 rounded-3 bg-white">
                 <div class="card-body">
-                    <h5 class="fw-bold mb-1">Lucía Hernández López</h5>
-                    <p class="texto mb-3">Familiar / Psicología</p>
+                    <h5 class="fw-bold mb-1"><c:out value="${perfil.nombreCompleto}"/></h5>
+                    <p class="texto mb-3"><c:out value="${perfil.materia}"/> / <c:out value="${perfil.especialidad}"/></p>
 
-                    <div class="alert alerta-verde py-2 d-none" id="okContacto" role="status">Datos de contacto guardados.</div>
+                    <c:if test="${not empty error}">
+                        <div class="alert alert-danger py-2" role="alert"><c:out value="${error}"/></div>
+                    </c:if>
 
-                    <form id="formContacto" novalidate>
+                    <form id="formContacto" method="post" action="${pageContext.request.contextPath}/perfil">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label texto small" for="correo">Correo electrónico</label>
-                                <input class="form-control" type="email" id="correo" value="lucia.hernandez@ejemplo.test" required>
+                                <input class="form-control" type="email" id="correo" name="correo" maxlength="100" required
+                                       value="<c:out value="${empty correoEscrito ? perfil.correo : correoEscrito}"/>">
                                 <div class="invalid-feedback">Ingrese un correo válido.</div>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label texto small" for="telefono">Teléfono</label>
-                                <input class="form-control" type="tel" id="telefono" value="777 123 4567" pattern="[0-9 +()\-]{7,20}" required>
+                                <input class="form-control" type="tel" id="telefono" name="telefono" pattern="[0-9 +()\-]{7,20}" required
+                                       value="<c:out value="${empty telefonoEscrito ? perfil.telefono : telefonoEscrito}"/>">
                                 <div class="invalid-feedback">Ingrese un teléfono válido (solo números, espacios, + y guiones).</div>
                             </div>
                         </div>
-                        <a href="${pageContext.request.contextPath}/actualizadoCorrectamente" class="btn btn-primario mt-3" type="submit">Guardar datos de contacto</a>
+                        <button class="btn btn-primario mt-3" type="submit">Guardar datos de contacto</button>
                     </form>
                 </div>
             </div>
@@ -67,8 +72,7 @@
                 <div class="card-body">
                     <h5 class="fw-bold mb-1">Cambiar contraseña</h5>
                     <p class="texto">Actualice su contraseña de acceso al sistema.</p>
-                    <div class="alert alerta-verde py-2 d-none" id="okPassword" role="status">Contraseña actualizada.</div>
-                    <a href="${pageContext.request.contextPath}/cambiarcontrasena" class="btn btn-secundario" type="button">Cambiar contraseña</a>
+                    <a href="${pageContext.request.contextPath}/cambiarcontrasena" class="btn btn-secundario">Cambiar contraseña</a>
                 </div>
             </div>
         </div>
