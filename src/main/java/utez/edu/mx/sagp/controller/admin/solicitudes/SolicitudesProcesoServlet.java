@@ -8,10 +8,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet (name = "solicitudCancelada", value = "/solicitudCancelada")
-public class SolicitudCancelada extends HttpServlet {
+@WebServlet(name = "solicitudProceso", value = "/solicitudProceso")
+public class SolicitudesProcesoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/vistas/admin/solicitudes/SolicitudCancelada.jsp").forward(req,resp);
+        req.getRequestDispatcher(
+                "/WEB-INF/vistas/admin/solicitudes/SolicitudesProceso.jsp"
+        ).forward(req, resp);
     }
 }

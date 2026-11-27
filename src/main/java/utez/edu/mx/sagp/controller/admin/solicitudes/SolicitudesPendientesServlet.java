@@ -1,4 +1,4 @@
-package utez.edu.mx.sagp.servlet;
+package utez.edu.mx.sagp.controller.admin.solicitudes;
 
 import utez.edu.mx.sagp.model.Solicitud;
 import utez.edu.mx.sagp.service.SolicitudService;
@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/solicitudes")
-public class SolicitudServlet extends HttpServlet {
+@WebServlet(name = "solicitudes" ,value = "/solicitudes")
+public class SolicitudesPendientesServlet extends HttpServlet {
     private SolicitudService service = new SolicitudService();
 
     @Override
@@ -24,9 +24,9 @@ public class SolicitudServlet extends HttpServlet {
         List<Solicitud> solicitudes = service.obtenerSolicitudes();
 
         // 2. Adjunta los datos a la petición
-        request.setAttribute("listaSolicitudes", solicitudes);
+        request.setAttribute(   "listaSolicitudes", solicitudes);
 
         // 3. Redirige a la vista JSP
-        request.getRequestDispatcher("/solicitudes.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/vistas/admin/solicitudes/SolicitudPendiente.jsp").forward(request, response);
     }
 }

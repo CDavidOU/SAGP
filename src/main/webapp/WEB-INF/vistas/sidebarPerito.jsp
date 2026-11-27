@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link d-flex align-items-center ${param.seccionActiva == 'dictamenes' ? 'menu-activo rounded' : 'enlace-menu'}">
+            <a href="${pageContext.request.contextPath}/vista-dictamen" class="nav-link d-flex align-items-center ${param.seccionActiva == 'dictamenes' ? 'menu-activo rounded' : 'enlace-menu'}">
                 <i class="bi bi-file-earmark-text me-3 fs-5"></i> Dictámenes
             </a>
         </li>

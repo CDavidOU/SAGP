@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,8 +40,8 @@
 
         <div class="px-4 my-4">
             <div class="d-flex flex-wrap gap-2">
-                <a href="#" class="btn btn-secundario px-3">Pendientes · 3</a>
-                <a href="#" class="btn btn-primario px-3">En proceso · 24</a>
+                <a href="${pageContext.request.contextPath}/solicitudes" class="btn btn-secundario px-3">Pendientes · 3</a>
+                <a href="${pageContext.request.contextPath}/solicitudProceso" class="btn btn-primario px-3">En proceso · 24</a>
             </div>
         </div>
 
@@ -86,7 +86,7 @@
 
         <div class="px-4 my-4">
             <div class="d-flex flex-wrap gap-3">
-                <a href="#" class="btn btn-primario px-4">Reasignar SOL-2026-0148</a>
+                <a href="${pageContext.request.contextPath}/seleccionar-perito" class="btn btn-primario px-4">Reasignar SOL-2026-0148</a>
                 <a href="#" class="btn btn-secundario px-4">Gestionar entrega finalizada</a>
             </div>
         </div>
